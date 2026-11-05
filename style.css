@@ -1,0 +1,62 @@
+/* Variáveis para controle dos temas */
+:root {
+  --bg-color: #e0e0e0;
+  --gradient-color: rgba(173, 216, 230, 0.85); /* Azul claro */
+  --text-color: #333333;
+  --btn-bg: #ffffff;
+  --btn-text: #333333;
+  --btn-border: #cccccc;
+}
+
+/* Estilos para o modo escuro */
+body.dark-mode {
+  --bg-color: #121212;
+  --gradient-color: rgba(25, 118, 210, 0.4); /* Azul escuro/suave */
+  --text-color: #f0f0f0;
+  --btn-bg: #222222;
+  --btn-text: #ffffff;
+  --btn-border: #444444;
+}
+
+/* Reset básico e transições */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.4s ease, color 0.4s ease, background 0.4s ease;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+  
+  /* Fundo principal + Gradiente radial centralizado */
+  background-color: var(--bg-color);
+  background-image: radial-gradient(circle at center, var(--gradient-color) 0%, transparent 70%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Botão no canto superior direito */
+.theme-toggle-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 20px;
+  border: 1px solid var(--btn-border);
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  outline: none;
+  z-index: 1000;
+}
+
+.theme-toggle-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+}
