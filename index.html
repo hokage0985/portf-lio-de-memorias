@@ -3,11 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>portfolio de memorias</title>
+    <title>Portfólio de Memórias</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <p></p>
+
+    <!-- Botão Menu Hambúrguer (3 riscos paralelos) no canto superior esquerdo -->
+    <button id="menu-btn" class="menu-btn" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Coluna Lateral (Sidebar) -->
+    <nav id="sidebar" class="sidebar">
+        <ul>
+            <li><button class="nav-item active" data-target="trajetoria">Trajetória escolar</button></li>
+            <li><button class="nav-item" data-target="redacoes">Redações</button></li>
+        </ul>
+    </nav>
+
+    <!-- Fundo escuro ao abrir o menu -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        
+        <!-- SEÇÃO 1: Trajetória Escolar (Selecionada inicialmente e vazia apenas com título) -->
+        <section id="trajetoria" class="page-section active">
+            <h1>Trajetória Escolar</h1>
+        </section>
+
+        <!-- SEÇÃO 2: Redações -->
+        <section id="redacoes" class="page-section">
+            <h1>Redações</h1>
+
+            <!-- Subseção: Redações Especiais (3 cards) -->
+            <div class="redacoes-grupo">
+                <h2>Redações Especiais</h2>
+                <div class="cards-grid">
+                    <div class="card card-especial">
+                        <button class="close-card-btn" aria-label="Fechar">&times;</button>
+                        <div class="card-header">
+                            <span class="tag">Especial</span>
+                            <h3>Redação Especial 1 (Sem título)</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Espaço reservado para o texto da redação...</p>
+                        </div>
+                    </div>
+
+                    <div class="card card-especial">
+                        <button class="close-card-btn" aria-label="Fechar">&times;</button>
+                        <div class="card-header">
+                            <span class="tag">Especial</span>
+                            <h3>Redação Especial 2 (Sem título)</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Espaço reservado para o texto da redação...</p>
+                        </div>
+                    </div>
+
+                    <div class="card card-especial">
+                        <button class="close-card-btn" aria-label="Fechar">&times;</button>
+                        <div class="card-header">
+                            <span class="tag">Especial</span>
+                            <h3>Redação Especial 3 (Sem título)</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Espaço reservado para o texto da redação...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subseção: Circuito de Treino para ENEM (14 cards) -->
+            <div class="redacoes-grupo">
+                <h2>Circuito de Treino para ENEM</h2>
+                <div class="cards-grid">
+                    <!-- Temas 1 a 14 -->
+                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 1</h3></div><div class="card-body"><p>Conteúdo do Tema 1...</p></div></div>
+                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 2</h3></div><div class="card-body"><p>Conteúdo do Tema 2...</p></div></div>
+                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 3</h3></div><div class="card-body"><p>Conteúdo do Tema 3...</p></div></div>
+                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 4</h3></div><div class="card-body"><p>Conteúdo do Tema 4...</p></div></div>
+                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 5</h3></div><div class="card-body"><p>Conteúdo do Tema 5...</p></div></div>
+                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 6</h3></div><div class="card-body"><p>Conteúdo do Tema 6...</p></div></div>
+                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 7</h3></div><div class="card-body"><p>Conteúdo do Tema 7...</p></div></div>
+                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 8</h3></div><div class="card-body"><p>Conteúdo do Tema 8...</p></div></div>
+                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 9</h3></div><div class="card-body"><p>Conteúdo do Tema 9...</p></div></div>
+                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 10</h3></div><div class="card-body"><p>Conteúdo do Tema 10...</p></div></div>
+                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 11</h3></div><div class="card-body"><p>Conteúdo do Tema 11...</p></div></div>
+                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 12</h3></div><div class="card-body"><p>Conteúdo do Tema 12...</p></div></div>
+                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 13</h3></div><div class="card-body"><p>Conteúdo do Tema 13...</p></div></div>
+                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 14</h3></div><div class="card-body"><p>Conteúdo do Tema 14...</p></div></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
 </body>
 </html>
