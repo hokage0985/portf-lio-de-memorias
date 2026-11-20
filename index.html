@@ -1,106 +1,787 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio de Memórias</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memórias — Trajetória Escolar</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
+
 <body>
 
-    <!-- Botão Menu Hambúrguer (3 riscos paralelos) no canto superior esquerdo -->
-    <button id="menu-btn" class="menu-btn" aria-label="Abrir menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+  <button id="menu-btn" class="menu-btn" aria-label="Abrir menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
-    <!-- Coluna Lateral (Sidebar) -->
-    <nav id="sidebar" class="sidebar">
-        <ul>
-            <li><button class="nav-item active" data-target="trajetoria">Trajetória escolar</button></li>
-            <li><button class="nav-item" data-target="redacoes">Redações</button></li>
-        </ul>
-    </nav>
+  <nav id="sidebar" class="sidebar">
+    <ul>
+      <li>
+        <button class="nav-item active" data-target="trajetoria">
+          Trajetória escolar
+        </button>
+      </li>
+      <li>
+        <button class="nav-item" data-target="redacoes">
+          Redações
+        </button>
+      </li>
+    </ul>
+  </nav>
 
-    <!-- Fundo escuro ao abrir o menu -->
-    <div id="overlay" class="overlay"></div>
+  <div id="overlay" class="overlay"></div>
 
-    <!-- Conteúdo Principal -->
-    <main class="main-content">
-        
-        <!-- SEÇÃO 1: Trajetória Escolar (Selecionada inicialmente e vazia apenas com título) -->
-        <section id="trajetoria" class="page-section active">
-            <h1>Trajetória Escolar</h1>
-        </section>
+  <main class="main-content">
 
-        <!-- SEÇÃO 2: Redações -->
-        <section id="redacoes" class="page-section">
-            <h1>Redações</h1>
+    <!-- ========================= -->
+    <!-- TRAJETÓRIA ESCOLAR -->
+    <!-- ========================= -->
 
-            <!-- Subseção: Redações Especiais (3 cards) -->
-            <div class="redacoes-grupo">
-                <h2>Redações Especiais</h2>
-                <div class="cards-grid">
-                    <div class="card card-especial">
-                        <button class="close-card-btn" aria-label="Fechar">&times;</button>
-                        <div class="card-header">
-                            <span class="tag">Especial</span>
-                            <h3>Redação Especial 1 (Sem título)</h3>
-                        </div>
-                        <div class="card-body">
-                            <p>Espaço reservado para o texto da redação...</p>
-                        </div>
-                    </div>
+    <section id="trajetoria" class="page-section active">
 
-                    <div class="card card-especial">
-                        <button class="close-card-btn" aria-label="Fechar">&times;</button>
-                        <div class="card-header">
-                            <span class="tag">Especial</span>
-                            <h3>Redação Especial 2 (Sem título)</h3>
-                        </div>
-                        <div class="card-body">
-                            <p>Espaço reservado para o texto da redação...</p>
-                        </div>
-                    </div>
+      <div id="memory-deck" class="memory-deck">
 
-                    <div class="card card-especial">
-                        <button class="close-card-btn" aria-label="Fechar">&times;</button>
-                        <div class="card-header">
-                            <span class="tag">Especial</span>
-                            <h3>Redação Especial 3 (Sem título)</h3>
-                        </div>
-                        <div class="card-body">
-                            <p>Espaço reservado para o texto da redação...</p>
-                        </div>
-                    </div>
+        <!-- SLIDE 1 -->
+
+        <article class="memory-slide active" data-slide="1">
+          <div class="slide-inner">
+            <div class="slide-copy">
+
+              <span class="slide-number">01 / 16</span>
+
+              <h1>Primeiro dia de infer- digo, escola.</h1>
+
+              <p class="subtext">
+                Por quem vê de fora: uma criança animada para começar uma nova fase.
+              </p>
+
+              <div class="interactive-card school-poll">
+                <p>Você estava realmente feliz para ir à escola?</p>
+
+                <div class="poll-buttons">
+                  <button id="agree-btn" class="poll-btn agree">CONCORDO</button>
+                  <button id="disagree-btn" class="poll-btn disagree">DISCORDO</button>
                 </div>
+
+                <p id="poll-result" class="poll-result">
+                  Escolha uma opção para registrar sua versão dos fatos.
+                </p>
+              </div>
+
             </div>
 
-            <!-- Subseção: Circuito de Treino para ENEM (14 cards) -->
-            <div class="redacoes-grupo">
-                <h2>Circuito de Treino para ENEM</h2>
-                <div class="cards-grid">
-                    <!-- Temas 1 a 14 -->
-                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 1</h3></div><div class="card-body"><p>Conteúdo do Tema 1...</p></div></div>
-                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 2</h3></div><div class="card-body"><p>Conteúdo do Tema 2...</p></div></div>
-                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 3</h3></div><div class="card-body"><p>Conteúdo do Tema 3...</p></div></div>
-                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 4</h3></div><div class="card-body"><p>Conteúdo do Tema 4...</p></div></div>
-                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 5</h3></div><div class="card-body"><p>Conteúdo do Tema 5...</p></div></div>
-                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 6</h3></div><div class="card-body"><p>Conteúdo do Tema 6...</p></div></div>
-                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 7</h3></div><div class="card-body"><p>Conteúdo do Tema 7...</p></div></div>
-                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 8</h3></div><div class="card-body"><p>Conteúdo do Tema 8...</p></div></div>
-                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 9</h3></div><div class="card-body"><p>Conteúdo do Tema 9...</p></div></div>
-                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 10</h3></div><div class="card-body"><p>Conteúdo do Tema 10...</p></div></div>
-                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 11</h3></div><div class="card-body"><p>Conteúdo do Tema 11...</p></div></div>
-                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 12</h3></div><div class="card-body"><p>Conteúdo do Tema 12...</p></div></div>
-                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 13</h3></div><div class="card-body"><p>Conteúdo do Tema 13...</p></div></div>
-                    <div class="card"><button class="close-card-btn">&times;</button><div class="card-header"><h3>Tema 14</h3></div><div class="card-body"><p>Conteúdo do Tema 14...</p></div></div>
-                </div>
+            <div class="image-wrap">
+              <img src="img/img1.jpeg" alt="Primeiro dia de escola">
             </div>
-        </section>
+          </div>
+        </article>
 
-    </main>
+        <!-- SLIDE 2 -->
+
+        <article class="memory-slide" data-slide="2">
+          <div class="slide-inner reverse">
+            <div class="slide-copy">
+
+              <span class="slide-number">02 / 16</span>
+
+              <h1>Dias das mamães EBAAA</h1>
+
+              <p>
+                Uma das poucas coisas que sobreviveram à minha memória foi a existência de apresentações e datas comemorativas.
+              </p>
+
+              <button class="chaos-btn" data-message="A memória foi localizada com sucesso. Conteúdo: absolutamente nenhum.">
+                🔎 Tentar lembrar
+              </button>
+
+              <p class="hidden-message"></p>
+
+            </div>
+
+            <div class="image-wrap">
+              <img src="img/img2.jpeg" alt="Dia das mães">
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 3 -->
+
+        <article class="memory-slide" data-slide="3">
+          <div class="slide-inner">
+            <div class="slide-copy">
+
+              <span class="slide-number">03 / 16</span>
+
+              <h1>Eu até esqueci que fiz judô por anos</h1>
+
+              <p>
+                E pensar que, em algum momento, eu pratiquei judô por anos.
+                Complicado ter me tornado sedentário.
+              </p>
+
+              <div class="stat-card">
+                <span>ATIVIDADE FÍSICA</span>
+
+                <strong>era uma coisa que existia</strong>
+
+                <button class="chaos-btn" data-message="Sistema tentando recuperar essa informação... █████░░░░░ 50%">
+                  Recuperar memória
+                </button>
+
+                <p class="hidden-message"></p>
+              </div>
+
+            </div>
+
+            <div class="image-wrap">
+              <img src="img/img3.jpeg" alt="Memória do judô">
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 4 -->
+
+        <article class="memory-slide" data-slide="4">
+          <div class="slide-inner reverse">
+            <div class="slide-copy">
+
+              <span class="slide-number">04 / 16</span>
+
+              <h1>Eita como o bixinho tava feliz</h1>
+
+              <p>Pra conhecer a nova escola dele.</p>
+
+              <div class="mood-meter">
+                <span>nível de felicidade</span>
+
+                <div class="meter">
+                  <div class="meter-fill" style="width: 96%"></div>
+                </div>
+
+                <small>
+                  96% — evidências fotográficas indicam empolgação
+                </small>
+              </div>
+
+            </div>
+
+            <div class="image-wrap">
+              <img src="img/img4.jpeg" alt="Primeiros momentos na nova escola">
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 5 -->
+
+        <article class="memory-slide" data-slide="5">
+          <div class="slide-inner">
+            <div class="slide-copy">
+
+              <span class="slide-number">05 / 16</span>
+
+              <h1>Festa junina na nova escola UHUuuuuu</h1>
+
+              <p>
+                Porque aparentemente festa junina era um dos grandes acontecimentos da minha carreira acadêmica.
+              </p>
+
+              <button class="chaos-btn" data-message="ARQUIVO ENCONTRADO: alegria em ambiente escolar.">
+                📂 Abrir arquivo
+              </button>
+
+              <p class="hidden-message"></p>
+
+            </div>
+
+            <div class="image-wrap">
+              <img src="img/img5.jpeg" alt="Festa junina">
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 6 -->
+
+        <article class="memory-slide text-only" data-slide="6">
+          <div class="slide-inner single">
+            <div class="slide-copy centered">
+
+              <span class="slide-number">06 / 16</span>
+
+              <h1>Estou passando rápido por essas imagens...</h1>
+
+              <p class="big-line">
+                ...porque eu não me lembro de nada da época.
+              </p>
+
+              <div class="loading-memory">
+                <span>CARREGANDO MEMÓRIA</span>
+
+                <div><i></i></div>
+
+                <small>Erro 404: lembrança não encontrada.</small>
+              </div>
+
+              <button class="next-btn direct-next">
+                Continuar →
+              </button>
+
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 7 -->
+
+        <article class="memory-slide" data-slide="7">
+          <div class="slide-inner reverse">
+            <div class="slide-copy">
+
+              <span class="slide-number">07 / 16</span>
+
+              <h1>Fatos curiosos dessa época</h1>
+
+              <div class="fact-box">
+                <p>🧸 Quase virei garoto propaganda da Kinder.</p>
+                <p>👀 Aparentemente o Vergineli também estudava nessa escola.</p>
+              </div>
+
+              <button class="chaos-btn" data-message="Não foram encontrados documentos que confirmem ou neguem qualquer uma dessas informações.">
+                Verificação oficial
+              </button>
+
+              <p class="hidden-message"></p>
+
+            </div>
+
+            <div class="image-wrap">
+              <img src="img/img6.jpeg" alt="Foto da época">
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 8 -->
+
+        <article class="memory-slide" data-slide="8">
+          <div class="slide-inner">
+            <div class="slide-copy">
+
+              <span class="slide-number">08 / 16</span>
+
+              <h1>Só lembro de 2 coisas</h1>
+
+              <div class="two-things">
+                <div>
+                  <b>01</b>
+                  <span>Estudei com gente muito rica.</span>
+                </div>
+
+                <div>
+                  <b>02</b>
+                  <span>Eu me autodeclarei gay sem saber o que era gay.</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="image-wrap">
+              <img src="img/img7.jpeg" alt="Memória da época">
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 9 -->
+
+        <article class="memory-slide text-only" data-slide="9">
+          <div class="slide-inner single">
+            <div class="slide-copy centered">
+
+              <span class="slide-number">09 / 16</span>
+
+              <h1>No sexto ano do fundamental...</h1>
+
+              <p class="big-line">entrei no Morelli.</p>
+
+              <p class="subtext">
+                Só que todas as fotos viraram <strong>LOST MEDIA</strong>.
+              </p>
+
+              <div class="lost-media">
+                📼 ARQUIVOS DO 6º ANO
+                <br>
+                <strong>STATUS: NÃO LOCALIZADOS</strong>
+              </div>
+
+              <p>
+                Então só tenho fotos do primeiro ano do médio em diante.
+              </p>
+
+              <button class="next-btn direct-next">
+                Aceitar a perda →
+              </button>
+
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 10 -->
+
+        <article class="memory-slide" data-slide="10">
+          <div class="slide-inner reverse">
+            <div class="slide-copy">
+
+              <span class="slide-number">10 / 16</span>
+
+              <h1>Não lembro o que estava acontecendo</h1>
+
+              <p>Mas deve ter sido muito resenha.</p>
+
+              <div class="resenha-meter">
+                <span>probabilidade de resenha</span>
+                <strong>██████████ 100%</strong>
+              </div>
+
+            </div>
+
+            <div class="image-wrap">
+              <img src="img/img8.jpeg" alt="Momento de resenha">
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 11 -->
+
+        <article class="memory-slide" data-slide="11">
+          <div class="slide-inner">
+            <div class="slide-copy">
+
+              <span class="slide-number">11 / 16</span>
+
+              <h1>Primeiro ano de robótica</h1>
+
+              <p>A galera era muito gente boa.</p>
+
+              <div class="glasses">
+                👓
+                <strong>E esse óculos era divônico.</strong>
+              </div>
+
+              <button class="chaos-btn" data-message="Divonicidade confirmada pelos registros históricos.">
+                Avaliar o óculos
+              </button>
+
+              <p class="hidden-message"></p>
+
+            </div>
+
+            <div class="image-wrap">
+              <img src="img/img9.jpeg" alt="Primeiro ano de robótica">
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 12 -->
+
+        <article class="memory-slide" data-slide="12">
+          <div class="slide-inner reverse">
+            <div class="slide-copy">
+
+              <span class="slide-number">12 / 16</span>
+
+              <h1>Pareço um pai divorciado tirando foto</h1>
+
+              <p>Mas esse dia no Barigui foi muito maneiro.</p>
+
+              <div class="dad-rating">
+                <span>fotografia estilo pai divorciado</span>
+                <strong>★★★★☆</strong>
+              </div>
+
+            </div>
+
+            <div class="image-wrap">
+              <img src="img/img10.jpeg" alt="Dia no Barigui">
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 13 -->
+
+        <article class="memory-slide" data-slide="13">
+          <div class="slide-inner">
+            <div class="slide-copy">
+
+              <span class="slide-number">13 / 16</span>
+
+              <h1>Momento épico, disse João Paulo</h1>
+
+              <p>
+                Fui gravar um telejornal com a Thaina.
+                Eu precisava me vestir como um trabalhador rural:
+                camisa velha e qualquer coisa.
+              </p>
+
+              <div class="news-alert">
+                📺 EDIÇÃO ESPECIAL
+                <br>
+                <strong>TRABALHADOR RURAL É CONVOCADO PARA O TELEJORNAL</strong>
+              </div>
+
+            </div>
+
+            <div class="image-wrap">
+              <img src="img/img11.jpeg" alt="Gravação de telejornal">
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 14 -->
+
+        <article class="memory-slide" data-slide="14">
+          <div class="slide-inner reverse">
+            <div class="slide-copy">
+
+              <span class="slide-number">14 / 16</span>
+
+              <h1>Festa junina EBAAA</h1>
+
+              <p>
+                Sim, de novo. Algumas tradições simplesmente se recusam a morrer.
+              </p>
+
+              <button class="chaos-btn" data-message="FESTA JUNINA: DLC DESBLOQUEADA. +10 milho, +10 alegria.">
+                Desbloquear DLC
+              </button>
+
+              <p class="hidden-message"></p>
+
+            </div>
+
+            <div class="image-pair">
+              <img src="img/img12.jpeg" alt="Festa junina 1">
+              <img src="img/img13.jpeg" alt="Festa junina 2">
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 15 -->
+
+        <article class="memory-slide" data-slide="15">
+          <div class="slide-inner">
+            <div class="slide-copy">
+
+              <span class="slide-number">15 / 16</span>
+
+              <h1>Fiquei revoltado e pintei a cara</h1>
+
+              <p>Não temos contexto. Temos apenas a evidência.</p>
+
+              <div class="evidence">
+                EVIDÊNCIA Nº 15
+                <br>
+                <strong>Rosto: pintado.</strong>
+                <br>
+                <small>Motivo: desconhecido.</small>
+              </div>
+
+            </div>
+
+            <div class="image-wrap">
+              <img src="img/img14.jpeg" alt="Rosto pintado">
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 16 -->
+
+        <article class="memory-slide final-slide" data-slide="16">
+          <div class="slide-inner final-inner">
+
+            <div class="final-copy">
+
+              <span class="slide-number">16 / 16</span>
+
+              <p class="sun-intro">E depois de tudo isso...</p>
+
+              <h1>É isso.</h1>
+
+              <p class="final-subtext">
+                Obrigado por acompanhar esse acervo duvidoso de memórias.
+              </p>
+
+              <button class="restart-btn" id="restart-btn">
+                ↻ Voltar ao início
+              </button>
+
+            </div>
+
+            <div class="image-wrap final-image">
+              <img src="img/img16.jpeg" alt="Foto final">
+            </div>
+
+          </div>
+        </article>
+
+        <!-- FOOTER -->
+
+        <footer class="site-footer">
+          <span>Portfólio de Memórias • Trajetória Escolar</span>
+          <span id="slide-counter">1 / 16</span>
+        </footer>
+
+        <!-- NAVEGAÇÃO DOS SLIDES -->
+
+        <button id="prev-btn" class="nav-slide prev" aria-label="Slide anterior">
+          ←
+        </button>
+
+        <button id="next-btn" class="nav-slide next">
+          Prosseguir →
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- REDAÇÕES -->
+    <!-- ========================= -->
+
+    <section id="redacoes" class="page-section">
+
+      <h1>Redações</h1>
+
+      <!-- REDAÇÕES ESPECIAIS -->
+
+      <div class="redacoes-grupo">
+
+        <h2>Redações Especiais</h2>
+
+        <div class="cards-grid">
+
+          <!-- REDAÇÃO 1 -->
+
+          <div class="card card-especial">
+
+            <button class="close-card-btn" aria-label="Fechar">
+              &times;
+            </button>
+
+            <div class="card-header">
+
+              <span class="tag">Primeira Avaliação de Redação</span>
+
+              <h3>
+                O respeito às diferenças como caminho para a superação dos conflitos sociais na sociedade contemporânea
+              </h3>
+
+            </div>
+
+            <div class="card-body">
+
+              <p>
+                Recentemente, em Santa Catarina, o governador aprovou um projeto, tal qual elimina as cotas raciais nas faculdades do estado. Essa decisão gerou um grande debate nas redes sociais, muitas pessoas concordaram e também muitas discordaram, criando um panorama diversificado de opiniões. Diante desse debate, é indispensável refletirmos sobre as cotas raciais e suas implicações. Por mais que tenham o propósito de promover a igualdade, podem acabar perpetuando estereótipos e negligenciando fatores socioeconômicos resultando em aplicações injustas.
+              </p>
+
+              <p>
+                Primeiramente, um dos principais problemas das cotas é o risco de perpetuar estereótipos, ao priorizar a etnia, podemos sugerir que determinados grupos precisam de um tratamento especial para alcançar o mesmo nível de desempenho. Tal percepção, mesmo não sendo a intenção, pode reforçar visões equivocadas sobre a competência e mérito individual. Dessa forma, em vez de promover a igualdade entre as etnias, pode acabar consolidando rótulos sociais que a própria política busca combater.
+              </p>
+
+              <p>
+                Além disso, cotas socioeconômicas mais diversas resolveriam a questão da equidade entre todos, desconsiderando fatores étnicos e culturais. Nesse caso, mais estudantes teriam o acesso ao ensino superior de forma justa, além de incentivar todos igualmente a concorrer às vagas, dando prioridade aos concorrentes de classe social mais baixa que poderiam ser negligenciados pelas cotas raciais. Essa forma também ajudaria a quebrar o ciclo de pobreza e enriquecendo o ambiente acadêmico como um todo.
+              </p>
+
+              <p>
+                Concluindo, embora as cotas raciais tenham sido criadas com o objetivo de promover maior igualdade no acesso ao ensino superior, sua aplicação pode gerar debates sobre critérios de justiça e efetividade. Nesse contexto, a adoção de cotas socioeconômicas surge como uma alternativa mais justa, pois considera as reais condições de vida dos estudantes e amplia as oportunidades para aqueles que enfrentam maiores dificuldades financeiras. Dessa forma, priorizar fatores socioeconômicos pode contribuir para reduzir desigualdades, favorecer o acesso à educação e promover uma sociedade mais justa, na qual as oportunidades sejam distribuídas conforme seu desempenho e mérito real.
+              </p>
+
+            </div>
+          </div>
+
+
+          <!-- REDAÇÃO 2 -->
+
+          <div class="card card-especial">
+
+            <button class="close-card-btn" aria-label="Fechar">
+              &times;
+            </button>
+
+            <div class="card-header">
+
+              <span class="tag">Concurso Agrinho</span>
+
+              <h3>
+                Agro forte, futuro sustentável: Equilíbrio entre produção e meio ambiente
+              </h3>
+
+            </div>
+
+            <div class="card-body">
+
+              <p>
+                Na contemporaneidade, o Agro é um dos pilares da economia brasileira, representando aproximadamente 25% do PIB segundo o levantamento CEPEA do ano de 2025. Entretanto, a dependência excessiva da exportação de produtos primários (commodities) causam diversas consequências, como a vulnerabilidade econômica e impactos na sustentabilidade ambiental, com os incentivos fiscais do governo.
+              </p>
+
+              <p>
+                Primeiramente, a economia muito atrelada a um setor específico tende a ser sensível a alterações de mercado, como no caso da Venezuela em 2014 quando o valor do petróleo despencou. No caso do Brasil, o Agro é fortemente atrelado a venda de commodities, além disso, também possuem incentivos a produção e exportação dos mesmos. Com esse incentivo e a dependência da venda desses produtos, uma possível queda de preços poderia deixar milhares de pessoas desempregadas e muitos pequenos produtores com altas dívidas.
+              </p>
+
+              <p>
+                Vale destacar também que o governo oferece vários benefícios fiscais para a venda de produtos primários e semielaborados, como a lei Kandir que isenta exportações de ICMS. Isso acaba afetando a sustentabilidade ambiental, incentivando a existência de grandes fazendas, junto disso aumentando a poluição com agrotóxicos. Ao invés disso, poderiam ser criadas leis para o incentivo da industrialização sustentável e plantações inteligentes.
+              </p>
+
+              <p>
+                Portanto, a dependência excessiva e os incentivos fiscais deverão ser analisados com finalidade de mitigar as consequências negativas. Com isso, o governo federal deverá adaptar algumas leis para incentivar o desenvolvimento de uma indústria sustentável e menores emissões de poluentes ao ambiente, através de projetos de lei. Desse modo, o Brasil se tornaria um país mais seguro economicamente e mais sustentável.
+              </p>
+
+            </div>
+          </div>
+
+
+          <!-- REDAÇÃO 3 -->
+
+          <div class="card card-especial">
+
+            <button class="close-card-btn" aria-label="Fechar">
+              &times;
+            </button>
+
+            <div class="card-header">
+
+              <span class="tag">Redação Temporizada • ENEM 2016</span>
+
+              <h3>
+                Caminhos para combater a intolerância religiosa no Brasil
+              </h3>
+
+            </div>
+
+            <div class="card-body">
+
+              <p>
+                Por volta do século I, a religião cristã foi considerada como algo pagão, cultuando falsos deuses segundo as crenças romanas. Na contemporaneidade, isso se torna visível quando pessoas atacam as outras por conta de religião. Nesse contexto, os preconceitos vindos de gerações passadas devem ser combatidos.
+              </p>
+
+              <p>
+                No século XV ocorreram os eventos de perseguição contra pessoas que discordam da teologia da época, como ocorreu com Galileu Galilei, o criador da teoria de que a terra girava ao redor do sol juntamente dos outros planetas. Esse pensamento de perseguição, por mais que reduzido, ainda acontece com pessoas mais extremas, discordando da tecnologia ou até mesmo atacando outras pessoas.
+              </p>
+
+              <p>
+                Além disso, as gerações mais jovens tendem a ser mais influenciáveis e extremas, podendo repetir o que aconteceu no passado se não houver uma boa educação.
+              </p>
+
+              <p>
+                Portanto, os preconceitos das gerações antigas deverão ser combatidos por meio da melhora da educação, focando em pontos como ética e tolerância, a fim de reduzir os impactos dos pensamentos dos antigos.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- CIRCUITO DE TREINO PARA ENEM -->
+
+      <div class="redacoes-grupo">
+
+        <h2>Circuito de Treino para ENEM</h2>
+
+        <div class="cards-grid">
+
+          <div class="card">
+            <button class="close-card-btn">&times;</button>
+            <div class="card-header"><h3>Tema 1</h3></div>
+            <div class="card-body"><p>Conteúdo do Tema 1...</p></div>
+          </div>
+
+          <div class="card">
+            <button class="close-card-btn">&times;</button>
+            <div class="card-header"><h3>Tema 2</h3></div>
+            <div class="card-body"><p>Conteúdo do Tema 2...</p></div>
+          </div>
+
+          <div class="card">
+            <button class="close-card-btn">&times;</button>
+            <div class="card-header"><h3>Tema 3</h3></div>
+            <div class="card-body"><p>Conteúdo do Tema 3...</p></div>
+          </div>
+
+          <div class="card">
+            <button class="close-card-btn">&times;</button>
+            <div class="card-header"><h3>Tema 4</h3></div>
+            <div class="card-body"><p>Conteúdo do Tema 4...</p></div>
+          </div>
+
+          <div class="card">
+            <button class="close-card-btn">&times;</button>
+            <div class="card-header"><h3>Tema 5</h3></div>
+            <div class="card-body"><p>Conteúdo do Tema 5...</p></div>
+          </div>
+
+          <div class="card">
+            <button class="close-card-btn">&times;</button>
+            <div class="card-header"><h3>Tema 6</h3></div>
+            <div class="card-body"><p>Conteúdo do Tema 6...</p></div>
+          </div>
+
+          <div class="card">
+            <button class="close-card-btn">&times;</button>
+            <div class="card-header"><h3>Tema 7</h3></div>
+            <div class="card-body"><p>Conteúdo do Tema 7...</p></div>
+          </div>
+
+          <div class="card">
+            <button class="close-card-btn">&times;</button>
+            <div class="card-header"><h3>Tema 8</h3></div>
+            <div class="card-body"><p>Conteúdo do Tema 8...</p></div>
+          </div>
+
+          <div class="card">
+            <button class="close-card-btn">&times;</button>
+            <div class="card-header"><h3>Tema 9</h3></div>
+            <div class="card-body"><p>Conteúdo do Tema 9...</p></div>
+          </div>
+
+          <div class="card">
+            <button class="close-card-btn">&times;</button>
+            <div class="card-header"><h3>Tema 10</h3></div>
+            <div class="card-body"><p>Conteúdo do Tema 10...</p></div>
+          </div>
+
+          <div class="card">
+            <button class="close-card-btn">&times;</button>
+            <div class="card-header"><h3>Tema 11</h3></div>
+            <div class="card-body"><p>Conteúdo do Tema 11...</p></div>
+          </div>
+
+          <div class="card">
+            <button class="close-card-btn">&times;</button>
+            <div class="card-header"><h3>Tema 12</h3></div>
+            <div class="card-body"><p>Conteúdo do Tema 12...</p></div>
+          </div>
+
+          <div class="card">
+            <button class="close-card-btn">&times;</button>
+            <div class="card-header"><h3>Tema 13</h3></div>
+            <div class="card-body"><p>Conteúdo do Tema 13...</p></div>
+          </div>
+
+          <div class="card">
+            <button class="close-card-btn">&times;</button>
+            <div class="card-header"><h3>Tema 14</h3></div>
+            <div class="card-body"><p>Conteúdo do Tema 14...</p></div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
 </body>
 </html>

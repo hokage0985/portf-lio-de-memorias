@@ -1,98 +1,501 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. BOTÃO DE TEMA (MANTIDO DO CÓDIGO ORIGINAL)
+
+  const body = document.body;
+
+
+  // =========================
+  // TEMA CLARO / ESCURO
+  // =========================
+
   const toggleBtn = document.createElement('button');
+
   toggleBtn.id = 'theme-toggle';
   toggleBtn.className = 'theme-toggle-btn';
   toggleBtn.innerText = '🌙 Modo Escuro';
-  document.body.appendChild(toggleBtn);
 
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark-mode');
+  body.appendChild(toggleBtn);
+
+
+  if (localStorage.getItem('theme') === 'dark') {
+
+    body.classList.add('dark-mode');
+
     toggleBtn.innerText = '☀️ Modo Claro';
+
   }
+
 
   toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    const isDarkMode = document.body.classList.contains('dark-mode');
-    
-    if (isDarkMode) {
-      toggleBtn.innerText = '☀️ Modo Claro';
-      localStorage.setItem('theme', 'dark');
-    } else {
-      toggleBtn.innerText = '🌙 Modo Escuro';
-      localStorage.setItem('theme', 'light');
-    }
+
+    body.classList.toggle('dark-mode');
+
+    const dark = body.classList.contains('dark-mode');
+
+    toggleBtn.innerText =
+      dark
+        ? '☀️ Modo Claro'
+        : '🌙 Modo Escuro';
+
+    localStorage.setItem(
+      'theme',
+      dark ? 'dark' : 'light'
+    );
+
   });
 
-  // 2. CONTROLE DO MENU LATERAL (3 RISCOS HORIZONTAIS)
-  const menuBtn = document.getElementById('menu-btn');
-  const sidebar = document.getElementById('sidebar');
-  const overlay = document.getElementById('overlay');
+
+
+  // =========================
+  // MENU
+  // =========================
+
+  const menuBtn =
+    document.getElementById('menu-btn');
+
+  const sidebar =
+    document.getElementById('sidebar');
+
+  const overlay =
+    document.getElementById('overlay');
+
 
   function toggleMenu() {
+
     menuBtn.classList.toggle('open');
+
     sidebar.classList.toggle('open');
+
     overlay.classList.toggle('active');
+
   }
 
-  menuBtn.addEventListener('click', toggleMenu);
-  overlay.addEventListener('click', toggleMenu);
 
-  // 3. NAVEGAÇÃO ENTRE "TRAJETÓRIA ESCOLAR" E "REDAÇÕES"
-  const navItems = document.querySelectorAll('.nav-item');
-  const sections = document.querySelectorAll('.page-section');
+  menuBtn.addEventListener(
+    'click',
+    toggleMenu
+  );
+
+  overlay.addEventListener(
+    'click',
+    toggleMenu
+  );
+
+
+
+  // =========================
+  // NAVEGAÇÃO DAS PÁGINAS
+  // =========================
+
+  const navItems =
+    document.querySelectorAll('.nav-item');
+
+  const sections =
+    document.querySelectorAll('.page-section');
+
 
   navItems.forEach(item => {
-    item.addEventListener('click', () => {
-      // Atualiza botão ativo no menu
-      navItems.forEach(nav => nav.classList.remove('active'));
-      item.classList.add('active');
 
-      // Mostra a seção correspondente
-      const targetId = item.getAttribute('data-target');
-      sections.forEach(sec => {
-        sec.classList.remove('active');
-        if (sec.id === targetId) {
-          sec.classList.add('active');
-        }
+    item.addEventListener('click', () => {
+
+      navItems.forEach(nav => {
+
+        nav.classList.remove('active');
+
       });
 
-      // Fecha o menu lateral após selecionar
-      toggleMenu();
+
+      item.classList.add('active');
+
+
+      const target =
+        item.dataset.target;
+
+
+      sections.forEach(section => {
+
+        section.classList.toggle(
+          'active',
+          section.id === target
+        );
+
+      });
+
+
+      if (sidebar.classList.contains('open')) {
+
+        toggleMenu();
+
+      }
+
     });
+
   });
 
-  // 4. EXPANSÃO DOS CARDS DE REDAÇÃO PARA TELA INTEIRA
-  const cards = document.querySelectorAll('.card');
 
-  cards.forEach(card => {
-    const closeBtn = card.querySelector('.close-card-btn');
 
-    // Abre o card em tela inteira ao clicar nele
-    card.addEventListener('click', (e) => {
-      if (!card.classList.contains('expanded')) {
-        card.classList.add('expanded');
-        document.body.style.overflow = 'hidden'; // Impede rolagem da página atrás
-      }
+  // =========================
+  // DECK DE MEMÓRIAS
+  // =========================
+
+  const slides =
+    [...document.querySelectorAll('.memory-slide')];
+
+  const counter =
+    document.getElementById('slide-counter');
+
+  const nextBtn =
+    document.getElementById('next-btn');
+
+  const prevBtn =
+    document.getElementById('prev-btn');
+
+
+  let current = 0;
+
+
+  function updateDeck() {
+
+    slides.forEach((slide, i) => {
+
+      slide.classList.toggle(
+        'active',
+        i === current
+      );
+
     });
 
-    // Fecha o card ao clicar no "X"
-    closeBtn.addEventListener('click', (e) => {
-      e.stopPropagation(); // Evita reabrir o card pelo clique pai
-      card.classList.remove('expanded');
-      document.body.style.overflow = '';
-    });
-  });
 
-  // Permite fechar o card expandido pressionando a tecla ESC
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      const expandedCard = document.querySelector('.card.expanded');
-      if (expandedCard) {
-        expandedCard.classList.remove('expanded');
-        document.body.style.overflow = '';
+    counter.textContent =
+      `${current + 1} / ${slides.length}`;
+
+
+    prevBtn.disabled =
+      current === 0;
+
+
+    nextBtn.disabled =
+      current === slides.length - 1;
+
+
+    nextBtn.textContent =
+      current === slides.length - 1
+        ? 'Fim ✓'
+        : 'Prosseguir →';
+
+
+    // Último slide recebe a paleta amarelada
+
+    body.classList.toggle(
+      'sunset-mode',
+      current === slides.length - 1
+    );
+
+  }
+
+
+
+  function goToSlide(index) {
+
+    current =
+      Math.max(
+        0,
+        Math.min(
+          slides.length - 1,
+          index
+        )
+      );
+
+
+    updateDeck();
+
+  }
+
+
+
+  nextBtn.addEventListener(
+    'click',
+    () => goToSlide(current + 1)
+  );
+
+
+  prevBtn.addEventListener(
+    'click',
+    () => goToSlide(current - 1)
+  );
+
+
+
+  // Botões internos dos slides
+
+  document
+    .querySelectorAll('.direct-next')
+    .forEach(btn => {
+
+      btn.addEventListener(
+        'click',
+        () => goToSlide(current + 1)
+      );
+
+    });
+
+
+
+  // Voltar ao começo
+
+  document
+    .getElementById('restart-btn')
+    ?.addEventListener(
+      'click',
+      () => goToSlide(0)
+    );
+
+
+
+  // =========================
+  // TECLADO
+  // =========================
+
+  document.addEventListener(
+    'keydown',
+    e => {
+
+      if (
+        e.key === 'ArrowRight' ||
+        e.key === 'PageDown' ||
+        e.key === ' '
+      ) {
+
+        if (
+          document.querySelector(
+            '#trajetoria.active'
+          )
+        ) {
+
+          e.preventDefault();
+
+          goToSlide(current + 1);
+
+        }
+
       }
+
+
+      if (
+        e.key === 'ArrowLeft' ||
+        e.key === 'PageUp'
+      ) {
+
+        if (
+          document.querySelector(
+            '#trajetoria.active'
+          )
+        ) {
+
+          e.preventDefault();
+
+          goToSlide(current - 1);
+
+        }
+
+      }
+
     }
-  });
+  );
+
+
+
+  // =========================
+  // INTERAÇÕES DAS MEMÓRIAS
+  // =========================
+
+  document
+    .querySelectorAll('.chaos-btn')
+    .forEach(btn => {
+
+      btn.addEventListener('click', () => {
+
+        const target =
+          btn.parentElement
+            .querySelector('.hidden-message');
+
+
+        if (!target) return;
+
+
+        target.textContent =
+          btn.dataset.message;
+
+
+        target.classList.add('show');
+
+
+        btn.textContent =
+          '✓ Investigação concluída';
+
+
+        btn.disabled = true;
+
+      });
+
+    });
+
+
+
+  // =========================
+  // VOTAÇÃO DO PRIMEIRO SLIDE
+  // =========================
+
+  const agree =
+    document.getElementById('agree-btn');
+
+  const disagree =
+    document.getElementById('disagree-btn');
+
+  const result =
+    document.getElementById('poll-result');
+
+
+  let disagreements = 0;
+
+
+  disagree.addEventListener(
+    'click',
+    () => {
+
+      disagreements++;
+
+
+      const agreeScale =
+        1 + disagreements * 0.65;
+
+
+      const disagreeScale =
+        Math.max(
+          0.58,
+          1 - disagreements * 0.08
+        );
+
+
+      agree.style.transform =
+        `scale(${agreeScale})`;
+
+
+      disagree.style.transform =
+        `scale(${disagreeScale})`;
+
+
+      agree.style.zIndex = 3;
+
+
+      result.textContent =
+        disagreements < 3
+          ? 'O professor discorda da sua resposta.'
+          : 'O professor discordou tanto que a opção CONCORDO tomou conta da votação.';
+
+    }
+  );
+
+
+  agree.addEventListener(
+    'click',
+    () => {
+
+      result.textContent =
+        'Finalmente alguém concordou. Democracia restaurada.';
+
+      agree.classList.add('selected');
+
+    }
+  );
+
+
+
+  // Inicialização
+
+  updateDeck();
+
+
+
+  // =========================
+  // CARDS DAS REDAÇÕES
+  // =========================
+
+  document
+    .querySelectorAll('.card')
+    .forEach(card => {
+
+      const closeBtn =
+        card.querySelector(
+          '.close-card-btn'
+        );
+
+
+      card.addEventListener(
+        'click',
+        e => {
+
+          if (
+            !card.classList.contains('expanded') &&
+            e.target !== closeBtn
+          ) {
+
+            card.classList.add('expanded');
+
+            body.style.overflow =
+              'hidden';
+
+          }
+
+        }
+      );
+
+
+      closeBtn?.addEventListener(
+        'click',
+        e => {
+
+          e.stopPropagation();
+
+          card.classList.remove(
+            'expanded'
+          );
+
+          body.style.overflow = '';
+
+        }
+      );
+
+    });
+
+
+
+  // ESC fecha redação expandida
+
+  document.addEventListener(
+    'keydown',
+    e => {
+
+      if (e.key === 'Escape') {
+
+        const expanded =
+          document.querySelector(
+            '.card.expanded'
+          );
+
+
+        if (expanded) {
+
+          expanded.classList.remove(
+            'expanded'
+          );
+
+          body.style.overflow = '';
+
+        }
+
+      }
+
+    }
+  );
+
 });
