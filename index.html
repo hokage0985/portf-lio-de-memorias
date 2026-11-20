@@ -2,786 +2,859 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Memórias — Trajetória Escolar</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memórias — Trajetória Escolar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
-  <button id="menu-btn" class="menu-btn" aria-label="Abrir menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
+    <button id="menu-btn" class="menu-btn" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-  <nav id="sidebar" class="sidebar">
-    <ul>
-      <li>
-        <button class="nav-item active" data-target="trajetoria">
-          Trajetória escolar
-        </button>
-      </li>
-      <li>
-        <button class="nav-item" data-target="redacoes">
-          Redações
-        </button>
-      </li>
-    </ul>
-  </nav>
+    <nav id="sidebar" class="sidebar">
+        <ul>
+            <li>
+                <button class="nav-item active" data-target="trajetoria">
+                    Trajetória escolar
+                </button>
+            </li>
+            <li>
+                <button class="nav-item" data-target="redacoes">
+                    Redações
+                </button>
+            </li>
+        </ul>
+    </nav>
 
-  <div id="overlay" class="overlay"></div>
+    <div id="overlay" class="overlay"></div>
 
-  <main class="main-content">
+    <main class="main-content">
 
-    <!-- ========================= -->
-    <!-- TRAJETÓRIA ESCOLAR -->
-    <!-- ========================= -->
+        <!-- ========================= -->
+        <!-- TRAJETÓRIA ESCOLAR -->
+        <!-- ========================= -->
 
-    <section id="trajetoria" class="page-section active">
+        <section id="trajetoria" class="page-section active">
 
-      <div id="memory-deck" class="memory-deck">
+            <div id="memory-deck" class="memory-deck">
 
-        <!-- SLIDE 1 -->
+                <!-- SLIDE 1 -->
+                <article class="memory-slide active" data-slide="1">
+                    <div class="slide-inner">
+                        <div class="slide-copy">
+                            <span class="slide-number">01 / 16</span>
+                            <h1>Primeiro dia de infer- digo, escola.</h1>
 
-        <article class="memory-slide active" data-slide="1">
-          <div class="slide-inner">
-            <div class="slide-copy">
+                            <p class="subtext">
+                                Por quem vê de fora: uma criança animada para começar uma nova fase.
+                            </p>
 
-              <span class="slide-number">01 / 16</span>
+                            <div class="interactive-card school-poll">
+                                <p>Você estava realmente feliz para ir à escola?</p>
 
-              <h1>Primeiro dia de infer- digo, escola.</h1>
+                                <div class="poll-buttons">
+                                    <button id="agree-btn" class="poll-btn agree">CONCORDO</button>
+                                    <button id="disagree-btn" class="poll-btn disagree">DISCORDO</button>
+                                </div>
 
-              <p class="subtext">
-                Por quem vê de fora: uma criança animada para começar uma nova fase.
-              </p>
+                                <p id="poll-result" class="poll-result">
+                                    Escolha uma opção para registrar sua versão dos fatos.
+                                </p>
+                            </div>
+                        </div>
 
-              <div class="interactive-card school-poll">
-                <p>Você estava realmente feliz para ir à escola?</p>
+                        <div class="image-wrap">
+                            <img src="img/img1.jpeg" alt="Primeiro dia de escola">
+                        </div>
+                    </div>
+                </article>
 
-                <div class="poll-buttons">
-                  <button id="agree-btn" class="poll-btn agree">CONCORDO</button>
-                  <button id="disagree-btn" class="poll-btn disagree">DISCORDO</button>
-                </div>
+                <!-- SLIDE 2 -->
+                <article class="memory-slide" data-slide="2">
+                    <div class="slide-inner reverse">
+                        <div class="slide-copy">
+                            <span class="slide-number">02 / 16</span>
+                            <h1>Dias das mamães EBAAA</h1>
 
-                <p id="poll-result" class="poll-result">
-                  Escolha uma opção para registrar sua versão dos fatos.
-                </p>
-              </div>
+                            <p>
+                                Uma das poucas coisas que sobreviveram à minha memória foi a existência de apresentações e datas comemorativas.
+                            </p>
 
-            </div>
+                            <button class="chaos-btn" data-message="A memória foi localizada com sucesso. Conteúdo: absolutamente nenhum.">
+                                🔎 Tentar lembrar
+                            </button>
 
-            <div class="image-wrap">
-              <img src="img/img1.jpeg" alt="Primeiro dia de escola">
-            </div>
-          </div>
-        </article>
+                            <p class="hidden-message"></p>
+                        </div>
 
-        <!-- SLIDE 2 -->
+                        <div class="image-wrap">
+                            <img src="img/img2.jpeg" alt="Dia das mães">
+                        </div>
+                    </div>
+                </article>
 
-        <article class="memory-slide" data-slide="2">
-          <div class="slide-inner reverse">
-            <div class="slide-copy">
+                <!-- SLIDE 3 -->
+                <article class="memory-slide" data-slide="3">
+                    <div class="slide-inner">
+                        <div class="slide-copy">
+                            <span class="slide-number">03 / 16</span>
+                            <h1>Eu até esqueci que fiz judô por anos</h1>
 
-              <span class="slide-number">02 / 16</span>
+                            <p>
+                                E pensar que, em algum momento, eu pratiquei judô por anos.
+                                Complicado ter me tornado sedentário.
+                            </p>
 
-              <h1>Dias das mamães EBAAA</h1>
+                            <div class="stat-card">
+                                <span>ATIVIDADE FÍSICA</span>
+                                <strong>era uma coisa que existia</strong>
 
-              <p>
-                Uma das poucas coisas que sobreviveram à minha memória foi a existência de apresentações e datas comemorativas.
-              </p>
+                                <button class="chaos-btn" data-message="Sistema tentando recuperar essa informação... █████░░░░░ 50%">
+                                    Recuperar memória
+                                </button>
 
-              <button class="chaos-btn" data-message="A memória foi localizada com sucesso. Conteúdo: absolutamente nenhum.">
-                🔎 Tentar lembrar
-              </button>
+                                <p class="hidden-message"></p>
+                            </div>
+                        </div>
 
-              <p class="hidden-message"></p>
+                        <div class="image-wrap">
+                            <img src="img/img3.jpeg" alt="Memória do judô">
+                        </div>
+                    </div>
+                </article>
 
-            </div>
+                <!-- SLIDE 4 -->
+                <article class="memory-slide" data-slide="4">
+                    <div class="slide-inner reverse">
+                        <div class="slide-copy">
+                            <span class="slide-number">04 / 16</span>
+                            <h1>Eita como o bixinho tava feliz</h1>
 
-            <div class="image-wrap">
-              <img src="img/img2.jpeg" alt="Dia das mães">
-            </div>
-          </div>
-        </article>
+                            <p>Pra conhecer a nova escola dele.</p>
 
-        <!-- SLIDE 3 -->
+                            <div class="mood-meter">
+                                <span>nível de felicidade</span>
 
-        <article class="memory-slide" data-slide="3">
-          <div class="slide-inner">
-            <div class="slide-copy">
+                                <div class="meter">
+                                    <div class="meter-fill" style="width: 96%"></div>
+                                </div>
 
-              <span class="slide-number">03 / 16</span>
+                                <small>
+                                    96% — evidências fotográficas indicam empolgação
+                                </small>
+                            </div>
+                        </div>
 
-              <h1>Eu até esqueci que fiz judô por anos</h1>
+                        <div class="image-wrap">
+                            <img src="img/img4.jpeg" alt="Primeiros momentos na nova escola">
+                        </div>
+                    </div>
+                </article>
 
-              <p>
-                E pensar que, em algum momento, eu pratiquei judô por anos.
-                Complicado ter me tornado sedentário.
-              </p>
+                <!-- SLIDE 5 -->
+                <article class="memory-slide" data-slide="5">
+                    <div class="slide-inner">
+                        <div class="slide-copy">
+                            <span class="slide-number">05 / 16</span>
+                            <h1>Festa junina na nova escola UHUuuuuu</h1>
 
-              <div class="stat-card">
-                <span>ATIVIDADE FÍSICA</span>
+                            <p>
+                                Porque aparentemente festa junina era um dos grandes acontecimentos da minha carreira acadêmica.
+                            </p>
 
-                <strong>era uma coisa que existia</strong>
+                            <button class="chaos-btn" data-message="ARQUIVO ENCONTRADO: alegria em ambiente escolar.">
+                                📂 Abrir arquivo
+                            </button>
 
-                <button class="chaos-btn" data-message="Sistema tentando recuperar essa informação... █████░░░░░ 50%">
-                  Recuperar memória
+                            <p class="hidden-message"></p>
+                        </div>
+
+                        <div class="image-wrap">
+                            <img src="img/img5.jpeg" alt="Festa junina">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SLIDE 6 -->
+                <article class="memory-slide text-only" data-slide="6">
+                    <div class="slide-inner single">
+                        <div class="slide-copy centered">
+                            <span class="slide-number">06 / 16</span>
+                            <h1>Estou passando rápido por essas imagens...</h1>
+
+                            <p class="big-line">
+                                ...porque eu não me lembro de nada da época.
+                            </p>
+
+                            <div class="loading-memory">
+                                <span>CARREGANDO MEMÓRIA</span>
+                                <div><i></i></div>
+                                <small>Erro 404: lembrança não encontrada.</small>
+                            </div>
+
+                            <button class="next-btn direct-next">
+                                Continuar →
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SLIDE 7 -->
+                <article class="memory-slide" data-slide="7">
+                    <div class="slide-inner reverse">
+                        <div class="slide-copy">
+                            <span class="slide-number">07 / 16</span>
+                            <h1>Fatos curiosos dessa época</h1>
+
+                            <div class="fact-box">
+                                <p>🧸 Quase virei garoto propaganda da Kinder.</p>
+                                <p>👀 Aparentemente o Vergineli também estudava nessa escola.</p>
+                            </div>
+
+                            <button class="chaos-btn" data-message="Não foram encontrados documentos que confirmem ou neguem qualquer uma dessas informações.">
+                                Verificação oficial
+                            </button>
+
+                            <p class="hidden-message"></p>
+                        </div>
+
+                        <div class="image-wrap">
+                            <img src="img/img6.jpeg" alt="Foto da época">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SLIDE 8 -->
+                <article class="memory-slide" data-slide="8">
+                    <div class="slide-inner">
+                        <div class="slide-copy">
+                            <span class="slide-number">08 / 16</span>
+                            <h1>Só lembro de 2 coisas</h1>
+
+                            <div class="two-things">
+                                <div>
+                                    <b>01</b>
+                                    <span>Estudei com gente muito rica.</span>
+                                </div>
+
+                                <div>
+                                    <b>02</b>
+                                    <span>Eu me autodeclarei gay sem saber o que era gay.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="image-wrap">
+                            <img src="img/img7.jpeg" alt="Memória da época">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SLIDE 9 -->
+                <article class="memory-slide text-only" data-slide="9">
+                    <div class="slide-inner single">
+                        <div class="slide-copy centered">
+                            <span class="slide-number">09 / 16</span>
+                            <h1>No sexto ano do fundamental...</h1>
+
+                            <p class="big-line">entrei no Morelli.</p>
+
+                            <p class="subtext">
+                                Só que todas as fotos viraram <strong>LOST MEDIA</strong>.
+                            </p>
+
+                            <div class="lost-media">
+                                📼 ARQUIVOS DO 6º ANO
+                                <br>
+                                <strong>STATUS: NÃO LOCALIZADOS</strong>
+                            </div>
+
+                            <p>
+                                Então só tenho fotos do primeiro ano do médio em diante.
+                            </p>
+
+                            <button class="next-btn direct-next">
+                                Aceitar a perda →
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SLIDE 10 -->
+                <article class="memory-slide" data-slide="10">
+                    <div class="slide-inner reverse">
+                        <div class="slide-copy">
+                            <span class="slide-number">10 / 16</span>
+                            <h1>Não lembro o que estava acontecendo</h1>
+
+                            <p>Mas deve ter sido muito resenha.</p>
+
+                            <div class="resenha-meter">
+                                <span>probabilidade de resenha</span>
+                                <strong>██████████ 100%</strong>
+                            </div>
+                        </div>
+
+                        <div class="image-wrap">
+                            <img src="img/img8.jpeg" alt="Momento de resenha">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SLIDE 11 -->
+                <article class="memory-slide" data-slide="11">
+                    <div class="slide-inner">
+                        <div class="slide-copy">
+                            <span class="slide-number">11 / 16</span>
+                            <h1>Primeiro ano de robótica</h1>
+
+                            <p>A galera era muito gente boa.</p>
+
+                            <div class="glasses">
+                                👓
+                                <strong>E esse óculos era divônico.</strong>
+                            </div>
+
+                            <button class="chaos-btn" data-message="Divonicidade confirmada pelos registros históricos.">
+                                Avaliar o óculos
+                            </button>
+
+                            <p class="hidden-message"></p>
+                        </div>
+
+                        <div class="image-wrap">
+                            <img src="img/img9.jpeg" alt="Primeiro ano de robótica">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SLIDE 12 -->
+                <article class="memory-slide" data-slide="12">
+                    <div class="slide-inner reverse">
+                        <div class="slide-copy">
+                            <span class="slide-number">12 / 16</span>
+                            <h1>Pareço um pai divorciado tirando foto</h1>
+
+                            <p>Mas esse dia no Barigui foi muito maneiro.</p>
+
+                            <div class="dad-rating">
+                                <span>fotografia estilo pai divorciado</span>
+                                <strong>★★★★☆</strong>
+                            </div>
+                        </div>
+
+                        <div class="image-wrap">
+                            <img src="img/img10.jpeg" alt="Dia no Barigui">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SLIDE 13 -->
+                <article class="memory-slide" data-slide="13">
+                    <div class="slide-inner">
+                        <div class="slide-copy">
+                            <span class="slide-number">13 / 16</span>
+                            <h1>Momento épico, disse João Paulo</h1>
+
+                            <p>
+                                Fui gravar um telejornal com a Thaina.
+                                Eu precisava me vestir como um trabalhador rural:
+                                camisa velha e qualquer coisa.
+                            </p>
+
+                            <div class="news-alert">
+                                📺 EDIÇÃO ESPECIAL
+                                <br>
+                                <strong>TRABALHADOR RURAL É CONVOCADO PARA O TELEJORNAL</strong>
+                            </div>
+                        </div>
+
+                        <div class="image-wrap">
+                            <img src="img/img11.jpeg" alt="Gravação de telejornal">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SLIDE 14 -->
+                <article class="memory-slide" data-slide="14">
+                    <div class="slide-inner reverse">
+                        <div class="slide-copy">
+                            <span class="slide-number">14 / 16</span>
+                            <h1>Festa junina EBAAA</h1>
+
+                            <p>
+                                Sim, de novo. Algumas tradições simplesmente se recusam a morrer.
+                            </p>
+
+                            <button class="chaos-btn" data-message="FESTA JUNINA: DLC DESBLOQUEADA. +10 milho, +10 alegria.">
+                                Desbloquear DLC
+                            </button>
+
+                            <p class="hidden-message"></p>
+                        </div>
+
+                        <div class="image-pair">
+                            <img src="img/img12.jpeg" alt="Festa junina 1">
+                            <img src="img/img13.jpeg" alt="Festa junina 2">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SLIDE 15 -->
+                <article class="memory-slide" data-slide="15">
+                    <div class="slide-inner">
+                        <div class="slide-copy">
+                            <span class="slide-number">15 / 16</span>
+                            <h1>Fiquei revoltado e pintei a cara</h1>
+
+                            <p>Não temos contexto. Temos apenas a evidência.</p>
+
+                            <div class="evidence">
+                                EVIDÊNCIA Nº 15
+                                <br>
+                                <strong>Rosto: pintado.</strong>
+                                <br>
+                                <small>Motivo: desconhecido.</small>
+                            </div>
+                        </div>
+
+                        <div class="image-wrap">
+                            <img src="img/img14.jpeg" alt="Rosto pintado">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SLIDE 16 -->
+                <article class="memory-slide final-slide" data-slide="16">
+                    <div class="slide-inner final-inner">
+                        <div class="final-copy">
+                            <span class="slide-number">16 / 16</span>
+
+                            <p class="sun-intro">E depois de tudo isso...</p>
+
+                            <h1>É isso.</h1>
+
+                            <p class="final-subtext">
+                                Obrigado por acompanhar esse acervo duvidoso de memórias.
+                            </p>
+
+                            <button class="restart-btn" id="restart-btn">
+                                ↻ Voltar ao início
+                            </button>
+                        </div>
+
+                        <div class="image-wrap final-image">
+                            <img src="img/img16.jpeg" alt="Foto final">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- FOOTER -->
+                <footer class="site-footer">
+                    <span>Portfólio de Memórias • Trajetória Escolar</span>
+                    <span id="slide-counter">1 / 16</span>
+                </footer>
+
+                <!-- NAVEGAÇÃO DOS SLIDES -->
+                <button id="prev-btn" class="nav-slide prev" aria-label="Slide anterior">
+                    ←
                 </button>
 
-                <p class="hidden-message"></p>
-              </div>
+                <button id="next-btn" class="nav-slide next">
+                    Prosseguir →
+                </button>
 
             </div>
+        </section>
 
-            <div class="image-wrap">
-              <img src="img/img3.jpeg" alt="Memória do judô">
-            </div>
-          </div>
-        </article>
+        <!-- ========================= -->
+        <!-- REDAÇÕES -->
+        <!-- ========================= -->
 
-        <!-- SLIDE 4 -->
+        <section id="redacoes" class="page-section">
 
-        <article class="memory-slide" data-slide="4">
-          <div class="slide-inner reverse">
-            <div class="slide-copy">
+            <h1>Redações</h1>
 
-              <span class="slide-number">04 / 16</span>
+            <!-- REDAÇÕES ESPECIAIS -->
 
-              <h1>Eita como o bixinho tava feliz</h1>
+            <div class="redacoes-grupo">
+                <h2>Redações Especiais</h2>
 
-              <p>Pra conhecer a nova escola dele.</p>
+                <div class="cards-grid">
 
-              <div class="mood-meter">
-                <span>nível de felicidade</span>
+                    <!-- PRIMEIRA AVALIAÇÃO -->
+                    <div class="card card-especial">
+                        <button class="close-card-btn" aria-label="Fechar">&times;</button>
 
-                <div class="meter">
-                  <div class="meter-fill" style="width: 96%"></div>
+                        <div class="card-header">
+                            <span class="tag">Primeira Avaliação de Redação</span>
+
+                            <h3>
+                                O respeito às diferenças como caminho para a superação dos conflitos sociais na sociedade contemporânea
+                            </h3>
+                        </div>
+
+                        <div class="card-body">
+                            <p>
+                                Recentemente, em Santa Catarina, o governador aprovou um projeto, tal qual elimina as cotas raciais nas faculdades do estado. Essa decisão gerou um grande debate nas redes sociais, muitas pessoas concordaram e também muitas discordaram, criando um panorama diversificado de opiniões. Diante desse debate, é indispensável refletirmos sobre as cotas raciais e suas implicações. Por mais que tenham o propósito de promover a igualdade, podem acabar perpetuando estereótipos e negligenciando fatores socioeconômicos resultando em aplicações injustas.
+                            </p>
+
+                            <p>
+                                Primeiramente, um dos principais problemas das cotas é o risco de perpetuar estereótipos, ao priorizar a etnia, podemos sugerir que determinados grupos precisam de um tratamento especial para alcançar o mesmo nível de desempenho. Tal percepção, mesmo não sendo a intenção, pode reforçar visões equivocadas sobre a competência e mérito individual. Dessa forma, em vez de promover a igualdade entre as etnias, pode acabar consolidando rótulos sociais que a própria política busca combater.
+                            </p>
+
+                            <p>
+                                Além disso, cotas socioeconômicas mais diversas resolveriam a questão da equidade entre todos, desconsiderando fatores étnicos e culturais. Nesse caso, mais estudantes teriam o acesso ao ensino superior de forma justa, além de incentivar todos igualmente a concorrer às vagas, dando prioridade aos concorrentes de classe social mais baixa que poderiam ser negligenciados pelas cotas raciais. Essa forma também ajudaria a quebrar o ciclo de pobreza e enriquecendo o ambiente acadêmico como um todo.
+                            </p>
+
+                            <p>
+                                Concluindo, embora as cotas raciais tenham sido criadas com o objetivo de promover maior igualdade no acesso ao ensino superior, sua aplicação pode gerar debates sobre critérios de justiça e efetividade. Nesse contexto, a adoção de cotas socioeconômicas surge como uma alternativa mais justa, pois considera as reais condições de vida dos estudantes e amplia as oportunidades para aqueles que enfrentam maiores dificuldades financeiras. Dessa forma, priorizar fatores socioeconômicos pode contribuir para reduzir desigualdades, favorecer o acesso à educação e promover uma sociedade mais justa, na qual as oportunidades sejam distribuídas conforme seu desempenho e mérito real.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- AGRINHO -->
+                    <div class="card card-especial">
+                        <button class="close-card-btn" aria-label="Fechar">&times;</button>
+
+                        <div class="card-header">
+                            <span class="tag">Concurso Agrinho</span>
+
+                            <h3>
+                                Agro forte, futuro sustentável: Equilíbrio entre produção e meio ambiente
+                            </h3>
+                        </div>
+
+                        <div class="card-body">
+                            <p>
+                                Na contemporaneidade, o Agro é um dos pilares da economia brasileira, representando aproximadamente 25% do PIB segundo o levantamento CEPEA do ano de 2025. Entretanto, a dependência excessiva da exportação de produtos primários (commodities) causam diversas consequências, como a vulnerabilidade econômica e impactos na sustentabilidade ambiental, com os incentivos fiscais do governo.
+                            </p>
+
+                            <p>
+                                Primeiramente, a economia muito atrelada a um setor específico tende a ser sensível a alterações de mercado, como no caso da Venezuela em 2014 quando o valor do petróleo despencou. No caso do Brasil, o Agro é fortemente atrelado a venda de commodities, além disso, também possuem incentivos a produção e exportação dos mesmos. Com esse incentivo e a dependência da venda desses produtos, uma possível queda de preços poderia deixar milhares de pessoas desempregadas e muitos pequenos produtores com altas dívidas.
+                            </p>
+
+                            <p>
+                                Vale destacar também que o governo oferece vários benefícios fiscais para a venda de produtos primários e semielaborados, como a lei Kandir que isenta exportações de ICMS. Isso acaba afetando a sustentabilidade ambiental, incentivando a existência de grandes fazendas, junto disso aumentando a poluição com agrotóxicos. Ao invés disso, poderiam ser criadas leis para o incentivo da industrialização sustentável e plantações inteligentes.
+                            </p>
+
+                            <p>
+                                Portanto, a dependência excessiva e os incentivos fiscais deverão ser analisados com finalidade de mitigar as consequências negativas. Com isso, o governo federal deverá adaptar algumas leis para incentivar o desenvolvimento de uma indústria sustentável e menores emissões de poluentes ao ambiente, através de projetos de lei. Desse modo, o Brasil se tornaria um país mais seguro economicamente e mais sustentável.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ENEM 2016 -->
+                    <div class="card card-especial">
+                        <button class="close-card-btn" aria-label="Fechar">&times;</button>
+
+                        <div class="card-header">
+                            <span class="tag">Redação Temporizada • ENEM 2016</span>
+
+                            <h3>
+                                Caminhos para combater a intolerância religiosa no Brasil
+                            </h3>
+                        </div>
+
+                        <div class="card-body">
+                            <p>
+                                Por volta do século I, a religião cristã foi considerada como algo pagão, cultuando falsos deuses segundo as crenças romanas. Na contemporaneidade, isso se torna visível quando pessoas atacam as outras por conta de religião. Nesse contexto, os preconceitos vindos de gerações passadas devem ser combatidos.
+                            </p>
+
+                            <p>
+                                No século XV ocorreram os eventos de perseguição contra pessoas que discordam da teologia da época, como ocorreu com Galileu Galilei, o criador da teoria de que a terra girava ao redor do sol juntamente dos outros planetas. Esse pensamento de perseguição, por mais que reduzido, ainda acontece com pessoas mais extremas, discordando da tecnologia ou até mesmo atacando outras pessoas.
+                            </p>
+
+                            <p>
+                                Além disso, as gerações mais jovens tendem a ser mais influenciáveis e extremas, podendo repetir o que aconteceu no passado se não houver uma boa educação.
+                            </p>
+
+                            <p>
+                                Portanto, os preconceitos das gerações antigas deverão ser combatidos por meio da melhora da educação, focando em pontos como ética e tolerância, a fim de reduzir os impactos dos pensamentos dos antigos.
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
-
-                <small>
-                  96% — evidências fotográficas indicam empolgação
-                </small>
-              </div>
-
             </div>
 
-            <div class="image-wrap">
-              <img src="img/img4.jpeg" alt="Primeiros momentos na nova escola">
-            </div>
-          </div>
-        </article>
+            <!-- CIRCUITO DE TREINO PARA ENEM -->
 
-        <!-- SLIDE 5 -->
+            <div class="redacoes-grupo">
+                <h2>Circuito de Treino para ENEM</h2>
 
-        <article class="memory-slide" data-slide="5">
-          <div class="slide-inner">
-            <div class="slide-copy">
+                <div class="cards-grid">
 
-              <span class="slide-number">05 / 16</span>
+                    <!-- TEMA 1 -->
+                    <div class="card">
+                        <button class="close-card-btn" aria-label="Fechar">&times;</button>
 
-              <h1>Festa junina na nova escola UHUuuuuu</h1>
+                        <div class="card-header">
+                            <span class="tag">Realizada</span>
+                            <h3>
+                                Tema 1 — Quando a seca encontra a enchente: impactos sociais e econômicos das mudanças no ciclo hidrológico
+                            </h3>
+                        </div>
 
-              <p>
-                Porque aparentemente festa junina era um dos grandes acontecimentos da minha carreira acadêmica.
-              </p>
+                        <div class="card-body">
+                            <p>
+                                Segundo o IPCC, as mudanças nas condições climáticas têm intensificado a ocorrência de eventos extremos, como enchentes repentinas e grandes secas, evidenciando alterações no ciclo hidrológico. Nesse contexto, essas alterações deixam de ser apenas problemas ambientais e começam a impactar diretamente na sociedade. Dessa forma, a intensificação desses eventos amplia a insegurança hídrica, revelando seus impactos sociais e econômicos.
+                            </p>
 
-              <button class="chaos-btn" data-message="ARQUIVO ENCONTRADO: alegria em ambiente escolar.">
-                📂 Abrir arquivo
-              </button>
+                            <p>
+                                Sob a ótica de Ulrich Beck, conforme o desenvolvimento humano avança, riscos globais passam a ser criados, afetando toda a população, sobretudo os mais vulneráveis. Nesse sentido, a insegurança hídrica exemplifica essa lógica, em que pessoas que vivem em áreas de risco (próximo a rios ou áreas de deslizamento) são fortemente impactadas. Consequentemente, a ocorrência de um evento climático extremo pode acarretar a perda de moradias ou até mesmo vidas, agravando a vulnerabilidade social.
+                            </p>
 
-              <p class="hidden-message"></p>
+                            <p>
+                                No âmbito econômico, o Banco Mundial apontou que a ocorrência de crises hídricas pode afetar os setores produtivos, como o agronegócio. Sob essa perspectiva, a insegurança hídrica, decorrente das alterações do ciclo hidrológico, potencializa os impactos econômicos. Uma vez que um evento extremo aconteça, como uma enchente, haverá uma queda na produção de alimentos e produtos agrícolas, e por consequência a oferta tenderia a cair, culminando em aumento de preço de tais produtos.
+                            </p>
 
-            </div>
+                            <p>
+                                Portanto, a insegurança hídrica, frente as perspectivas das mudanças no ciclo hidrológico, deve ser combatida. Com tal finalidade, as prefeituras de todo o país devem implementar politicas publicas de gestão hídrica e criar um planejamento urbano sustentável, a fim reduzir os impactos socioeconômicos das transformações hidrológicas.
+                            </p>
+                        </div>
+                    </div>
 
-            <div class="image-wrap">
-              <img src="img/img5.jpeg" alt="Festa junina">
-            </div>
-          </div>
-        </article>
+                    <!-- TEMA 2 -->
+                    <div class="card">
+                        <button class="close-card-btn" aria-label="Fechar">&times;</button>
 
-        <!-- SLIDE 6 -->
+                        <div class="card-header">
+                            <span class="tag">Realizada</span>
+                            <h3>
+                                Tema 2 — A estética como imperativo: riscos e implicações do uso indiscriminado de canetas emagrecedoras
+                            </h3>
+                        </div>
 
-        <article class="memory-slide text-only" data-slide="6">
-          <div class="slide-inner single">
-            <div class="slide-copy centered">
+                        <div class="card-body">
+                            <p>
+                                Em Cyberpunk 2077, um videogame de 2020, a sociedade de Night City retrata um cenário onde o corpo é constantemente modificado para atender a padrões impostos, lógica semelhante à realidade contemporânea, em que o uso de canetas emagrecedoras revela a tentativa de se adequar aos ideais estéticos de forma imediata. A popularização dessas canetas mostra uma sociedade marcada pela valorização excessiva da aparência e pela busca imediatista por resultados, levando indivíduos a priorizarem os padrões estéticos em detrimento da própria saúde.
+                            </p>
 
-              <span class="slide-number">06 / 16</span>
+                            <p>
+                                Na atualidade, a pressão estética imposta socialmente se configura como um dos principais fatores que impulsionam a busca por padrões corporais idealizados. A gangue Maelstrom, presente em Cyberpunk, representa um cenário extremo em que o corpo é reduzido a um conjunto de modificações, refletindo a pressão por adaptação a determinados padrões. De forma análoga, o uso das canetas emagrecedoras revela uma tentativa de alcançar aceitação social através do uso de medicamentos.
+                            </p>
 
-              <h1>Estou passando rápido por essas imagens...</h1>
+                            <p>
+                                A cultura do imediatismo, característica marcante da sociedade contemporânea, impulsiona a busca por soluções rápidas para a obtenção de resultados estéticos. Nesse sentido, Zygmunt Bauman, ao abordar a sociedade líquida, evidencia uma sociedade marcada pela fluidez e pela valorização do instantâneo, onde a satisfação imediata se sobrepõe a construções duradouras. Assim a popularização das canetas emagrecedoras reflete essa lógica, ao oferecer uma solução rápida para a perda de peso.
+                            </p>
 
-              <p class="big-line">
-                ...porque eu não me lembro de nada da época.
-              </p>
+                            <p>
+                                Portanto, torna-se necessário que o ministério da saúde, em parceria com as mídias digitais, promova campanhas de conscientização acerca dos riscos do uso indiscriminado de canetas emagrecedoras, divulgando informações e depoimentos de profissionais da área, de modo a alertar a população sobre os perigos dessa prática e incentivar a adoção de hábitos saudáveis, reduzindo, assim, a influência de padrões estéticos e da busca por resultados imediatos.
+                            </p>
+                        </div>
+                    </div>
 
-              <div class="loading-memory">
-                <span>CARREGANDO MEMÓRIA</span>
+                    <!-- TEMA 3 -->
+                    <div class="card">
+                        <button class="close-card-btn" aria-label="Fechar">&times;</button>
 
-                <div><i></i></div>
+                        <div class="card-header">
+                            <span class="tag">Realizada — Incompleta</span>
+                            <h3>
+                                Tema 3 — O uso da Inteligência Artificial e as deepfakes: o que é real e o que é fictício na vida online?
+                            </h3>
+                        </div>
 
-                <small>Erro 404: lembrança não encontrada.</small>
-              </div>
+                        <div class="card-body">
+                            <p>
+                                Nas eleições de 2026, ocorreram diversos casos do uso de IA em manipulação de fotos e vídeos, fazendo brincadeiras e memes com a imagem dos presidenciáveis. Nesse cenário, mesmo que de forma inocente ocorrerá a divulgação de informações adulteradas e fake news. Com isso, devem ser analisadas os prós da evolução tecnológica e também os malefícios do uso indevido da IA para fabricação de falsas verdades.
+                            </p>
 
-              <button class="next-btn direct-next">
-                Continuar →
-              </button>
+                            <p>
+                                Primeiramente, a evolução tecnológica da IA surgiu em diversas áreas. Em 2025, foi lançado na internet o Kanguru, sendo compartilhado por um número considerável de pessoas e, consequentemente, gerado por IA. Essa tecnologia pode ser usada por pequenos comércios, eliminando a necessidade de investimento inicial para contratar um designer gráfico para publicidade. Portanto, a evolução da geração de imagens e vídeos com IA pode beneficiar o pequeno e microempreendedor.
+                            </p>
 
-            </div>
-          </div>
-        </article>
+                            <p>
+                                Em contraponto, a IA também pode ser usada para a fabricação de mentiras. No jogo Cyberpunk 2077, o protagonista instala um implante cibernético que altera o rosto, tom de pele e comportamentos, utilizando-o para espionagem ilegal. Nesse contexto, a tecnologia de deepfake se aproxima dessa premissa, modificando falas e ações por meio do vídeo falso, que pode acarretar em consequências graves à vítima como difamação, boicote. Logo, o uso da IA para o objetivo indevido pode ter o poder de destruir e espalhar desinformação.
+                            </p>
 
-        <!-- SLIDE 7 -->
+                            <p>
+                                Portanto,
+                            </p>
+                        </div>
+                    </div>
 
-        <article class="memory-slide" data-slide="7">
-          <div class="slide-inner reverse">
-            <div class="slide-copy">
+                    <!-- TEMA 4 -->
+                    <div class="card">
+                        <button class="close-card-btn" aria-label="Fechar">&times;</button>
+                        <div class="card-header">
+                            <span class="tag">Não realizada</span>
+                            <h3>Tema 4</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Redação não realizada.</p>
+                        </div>
+                    </div>
 
-              <span class="slide-number">07 / 16</span>
+                    <!-- TEMA 5 -->
+                    <div class="card">
+                        <button class="close-card-btn" aria-label="Fechar">&times;</button>
+                        <div class="card-header">
+                            <span class="tag">Não realizada</span>
+                            <h3>Tema 5</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Redação não realizada.</p>
+                        </div>
+                    </div>
 
-              <h1>Fatos curiosos dessa época</h1>
+                    <!-- TEMA 6 -->
+                    <div class="card">
+                        <button class="close-card-btn" aria-label="Fechar">&times;</button>
+                        <div class="card-header">
+                            <span class="tag">Não realizada</span>
+                            <h3>Tema 6</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Redação não realizada.</p>
+                        </div>
+                    </div>
 
-              <div class="fact-box">
-                <p>🧸 Quase virei garoto propaganda da Kinder.</p>
-                <p>👀 Aparentemente o Vergineli também estudava nessa escola.</p>
-              </div>
+                    <!-- TEMA 8 -->
+                    <div class="card">
+                        <button class="close-card-btn" aria-label="Fechar">&times;</button>
+                        <div class="card-header">
+                            <span class="tag">Não realizada</span>
+                            <h3>Tema 8</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Redação não realizada.</p>
+                        </div>
+                    </div>
 
-              <button class="chaos-btn" data-message="Não foram encontrados documentos que confirmem ou neguem qualquer uma dessas informações.">
-                Verificação oficial
-              </button>
+                    <!-- TEMA 9 -->
+                    <div class="card">
+                        <button class="close-card-btn" aria-label="Fechar">&times;</button>
 
-              <p class="hidden-message"></p>
+                        <div class="card-header">
+                            <span class="tag">Realizada</span>
+                            <h3>
+                                Tema 9 — Consumo, mídia e cultura: como referências mediadas por algoritmos influenciam os modos de vida na sociedade contemporânea
+                            </h3>
+                        </div>
 
-            </div>
+                        <div class="card-body">
+                            <p>
+                                Na obra Cyberpunk 2077, é apresentado um futuro distópico onde a publicidade e a propaganda estão atreladas ao dia a dia. A representação apresentada pela obra afirma o padrão do funcionamento das mídias digitais mediadas por algoritmos. Nesse sentido, a influência dos algoritmos sobre referências culturais revela a necessidade de analisar como a personalização do conteúdo pode interferir nos hábitos de consumo e modo de vida contemporânea.
+                            </p>
 
-            <div class="image-wrap">
-              <img src="img/img6.jpeg" alt="Foto da época">
-            </div>
-          </div>
-        </article>
+                            <p>
+                                Primeiramente, os algoritmos têm grande poder de influência sobre as referências culturais do indivíduo, analisando o histórico de pesquisas e tendências do momento e, a partir disso, selecionam conteúdos considerados relevantes. O usuário passa a receber constantemente os conteúdos direcionados pelo algoritmo, podendo conter diversos nichos, como estética, esporte e produtos; logo, a experiência cultural do indivíduo passa a ser parcialmente mediada por recomendações do sistema.
+                            </p>
 
-        <!-- SLIDE 8 -->
+                            <p>
+                                Como consequência dessa exposição personalizada, determinadas referências podem passar a influenciar outros aspectos da vida do indivíduo, alterando gostos, estilos e o comportamento. O mesmo padrão é reproduzido por outros usuários, determinando uma dominância de um certo assunto, ocorrendo uma padronização de hábitos e manifestações culturais.
+                            </p>
 
-        <article class="memory-slide" data-slide="8">
-          <div class="slide-inner">
-            <div class="slide-copy">
+                            <p>
+                                Portanto, a mediação algorítmica influencia os hábitos de consumo e modos de vida ao moldar as referências culturais dos indivíduos, e seus malefícios devem ser mitigados com um plano federal, estipulado pelo Ministério da Comunicação em parceria com as plataformas digitais, promovendo maior transparência e diversidade nas recomendações algorítmicas, por meio de diretrizes para as plataformas e ferramentas que permitem ao usuário compreender e controlar suas recomendações, a fim de reduzir a padronização das referências culturais e ampliar a autonomia dos usuários diante do sistema de personalização. Dessa forma, favorecendo uma relação mais consciente entre os indivíduos e as referências culturais presentes no meio digital.
+                            </p>
+                        </div>
+                    </div>
 
-              <span class="slide-number">08 / 16</span>
+                    <!-- TEMA 10 -->
+                    <div class="card">
+                        <button class="close-card-btn" aria-label="Fechar">&times;</button>
+                        <div class="card-header">
+                            <span class="tag">Não realizada</span>
+                            <h3>Tema 10</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Redação não realizada.</p>
+                        </div>
+                    </div>
 
-              <h1>Só lembro de 2 coisas</h1>
+                    <!-- TEMA 11 -->
+                    <div class="card">
+                        <button class="close-card-btn" aria-label="Fechar">&times;</button>
+                        <div class="card-header">
+                            <span class="tag">Não realizada</span>
+                            <h3>Tema 11</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Redação não realizada.</p>
+                        </div>
+                    </div>
 
-              <div class="two-things">
-                <div>
-                  <b>01</b>
-                  <span>Estudei com gente muito rica.</span>
+                    <!-- TEMA 12 -->
+                    <div class="card">
+                        <button class="close-card-btn" aria-label="Fechar">&times;</button>
+                        <div class="card-header">
+                            <span class="tag">Não realizada</span>
+                            <h3>Tema 12</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Redação não realizada.</p>
+                        </div>
+                    </div>
+
+                    <!-- TEMA 13 -->
+                    <div class="card">
+                        <button class="close-card-btn" aria-label="Fechar">&times;</button>
+                        <div class="card-header">
+                            <span class="tag">Não realizada</span>
+                            <h3>Tema 13</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Redação não realizada.</p>
+                        </div>
+                    </div>
+
+                    <!-- TEMA 14 -->
+                    <div class="card">
+                        <button class="close-card-btn" aria-label="Fechar">&times;</button>
+
+                        <div class="card-header">
+                            <span class="tag">Realizada</span>
+                            <h3>
+                                Tema 14 — El Niño e mudanças climáticas: desafios para a preparação da sociedade diante de eventos extremos
+                            </h3>
+                        </div>
+
+                        <div class="card-body">
+                            <p>
+                                No Egito antigo, as grandes flutuações e falhas nas cheias do rio Nilo eram eventos extremos que ditavam a sobrevivência da civilização. De forma análoga, o El Niño representa um evento ainda mais grave, com suas consequências se estendendo por todo o Brasil. Nesse sentido, é preciso analisar as questões de infraestrutura urbana inadequada para eventos climáticos e a falta de planejamento ocupacional em areas de risco.
+                            </p>
+
+                            <p>
+                                Nesse contexto, a insuficiência de estrutura adequada constitui uma das principais dificuldades para a preparação da sociedade em eventos climáticos extremos, essa problemática pode se relacionar ao jogo frostpunk, onde o jogador administra uma cidade atingida por uma grande nevasca. Fora da ficção, a realidade brasileira demonstra dificuldades parecidas quando cidades não dispõem de estrutura adequada para aguentar chuvas intensas, enchentes e outros eventos. Tal situação decorre da falta de manutenção do sistema de escoamento, que dificulta a drenagem da água das chuvas, favorecendo alagamentos que comprometem a o transporte e circulação urbana. Logo, a carência de uma estrutura adequada dificulta a preparação da sociedade em fenômenos climáticos extremos.
+                            </p>
+
+                            <p>
+                                Além disso, a falta de planejamento da ocupação urbana em áreas de risco representa outro obstáculo para a preparação da sociedade em fenômenos climáticos extremos. Isso se evidência no jogo dying light, na cidade de Harran, onde apresenta regiões urbanas precárias e comunidades vulneráveis diante da crise. Isso conecta-se à realidade em comunidades construídas sobre morros, margens de rios e áreas suscetíveis a deslizamentos e enchentes no Brasil. Isso decorre da falta de planejamento de ocupação e fiscalização urbana, que ocupam regiões ambientalmente vulneráveis, causando uma maior exposição da população aos desastres e aumentando os prejuízos humanos e materiais. Assim, a falta do planejamento da ocupação de um espaço aumenta a vulnerabilidade da sociedade diante de eventos climáticos.
+                            </p>
+
+                            <p>
+                                Portanto, a insuficiência da infraestrutura urbana e a falta de planejamento ocupacional devem ser analisados e combatidos por meio de um plano para promover a reorganização habitacional, promovida pelo ministério das cidades, em parceria das prefeituras, utilizando investimentos provenientes do FGTS para garantir o planejamento ocupacional adequado e manutenção eficiente dos sistemas de escoamento. A fim de garantir uma sociedade preparada e menos vulneravel à fenômenos ambientais e climáticos extremos.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- TEMA 17 -->
+                    <div class="card">
+                        <button class="close-card-btn" aria-label="Fechar">&times;</button>
+                        <div class="card-header">
+                            <span class="tag">Não realizada</span>
+                            <h3>Tema 17</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Redação não realizada.</p>
+                        </div>
+                    </div>
+
                 </div>
-
-                <div>
-                  <b>02</b>
-                  <span>Eu me autodeclarei gay sem saber o que era gay.</span>
-                </div>
-              </div>
-
             </div>
 
-            <div class="image-wrap">
-              <img src="img/img7.jpeg" alt="Memória da época">
-            </div>
-          </div>
-        </article>
+        </section>
 
-        <!-- SLIDE 9 -->
-
-        <article class="memory-slide text-only" data-slide="9">
-          <div class="slide-inner single">
-            <div class="slide-copy centered">
-
-              <span class="slide-number">09 / 16</span>
-
-              <h1>No sexto ano do fundamental...</h1>
-
-              <p class="big-line">entrei no Morelli.</p>
-
-              <p class="subtext">
-                Só que todas as fotos viraram <strong>LOST MEDIA</strong>.
-              </p>
-
-              <div class="lost-media">
-                📼 ARQUIVOS DO 6º ANO
-                <br>
-                <strong>STATUS: NÃO LOCALIZADOS</strong>
-              </div>
-
-              <p>
-                Então só tenho fotos do primeiro ano do médio em diante.
-              </p>
-
-              <button class="next-btn direct-next">
-                Aceitar a perda →
-              </button>
-
-            </div>
-          </div>
-        </article>
-
-        <!-- SLIDE 10 -->
-
-        <article class="memory-slide" data-slide="10">
-          <div class="slide-inner reverse">
-            <div class="slide-copy">
-
-              <span class="slide-number">10 / 16</span>
-
-              <h1>Não lembro o que estava acontecendo</h1>
-
-              <p>Mas deve ter sido muito resenha.</p>
-
-              <div class="resenha-meter">
-                <span>probabilidade de resenha</span>
-                <strong>██████████ 100%</strong>
-              </div>
-
-            </div>
-
-            <div class="image-wrap">
-              <img src="img/img8.jpeg" alt="Momento de resenha">
-            </div>
-          </div>
-        </article>
-
-        <!-- SLIDE 11 -->
-
-        <article class="memory-slide" data-slide="11">
-          <div class="slide-inner">
-            <div class="slide-copy">
-
-              <span class="slide-number">11 / 16</span>
-
-              <h1>Primeiro ano de robótica</h1>
-
-              <p>A galera era muito gente boa.</p>
-
-              <div class="glasses">
-                👓
-                <strong>E esse óculos era divônico.</strong>
-              </div>
-
-              <button class="chaos-btn" data-message="Divonicidade confirmada pelos registros históricos.">
-                Avaliar o óculos
-              </button>
-
-              <p class="hidden-message"></p>
-
-            </div>
-
-            <div class="image-wrap">
-              <img src="img/img9.jpeg" alt="Primeiro ano de robótica">
-            </div>
-          </div>
-        </article>
-
-        <!-- SLIDE 12 -->
-
-        <article class="memory-slide" data-slide="12">
-          <div class="slide-inner reverse">
-            <div class="slide-copy">
-
-              <span class="slide-number">12 / 16</span>
-
-              <h1>Pareço um pai divorciado tirando foto</h1>
-
-              <p>Mas esse dia no Barigui foi muito maneiro.</p>
-
-              <div class="dad-rating">
-                <span>fotografia estilo pai divorciado</span>
-                <strong>★★★★☆</strong>
-              </div>
-
-            </div>
-
-            <div class="image-wrap">
-              <img src="img/img10.jpeg" alt="Dia no Barigui">
-            </div>
-          </div>
-        </article>
-
-        <!-- SLIDE 13 -->
-
-        <article class="memory-slide" data-slide="13">
-          <div class="slide-inner">
-            <div class="slide-copy">
-
-              <span class="slide-number">13 / 16</span>
-
-              <h1>Momento épico, disse João Paulo</h1>
-
-              <p>
-                Fui gravar um telejornal com a Thaina.
-                Eu precisava me vestir como um trabalhador rural:
-                camisa velha e qualquer coisa.
-              </p>
-
-              <div class="news-alert">
-                📺 EDIÇÃO ESPECIAL
-                <br>
-                <strong>TRABALHADOR RURAL É CONVOCADO PARA O TELEJORNAL</strong>
-              </div>
-
-            </div>
-
-            <div class="image-wrap">
-              <img src="img/img11.jpeg" alt="Gravação de telejornal">
-            </div>
-          </div>
-        </article>
-
-        <!-- SLIDE 14 -->
-
-        <article class="memory-slide" data-slide="14">
-          <div class="slide-inner reverse">
-            <div class="slide-copy">
-
-              <span class="slide-number">14 / 16</span>
-
-              <h1>Festa junina EBAAA</h1>
-
-              <p>
-                Sim, de novo. Algumas tradições simplesmente se recusam a morrer.
-              </p>
-
-              <button class="chaos-btn" data-message="FESTA JUNINA: DLC DESBLOQUEADA. +10 milho, +10 alegria.">
-                Desbloquear DLC
-              </button>
-
-              <p class="hidden-message"></p>
-
-            </div>
-
-            <div class="image-pair">
-              <img src="img/img12.jpeg" alt="Festa junina 1">
-              <img src="img/img13.jpeg" alt="Festa junina 2">
-            </div>
-          </div>
-        </article>
-
-        <!-- SLIDE 15 -->
-
-        <article class="memory-slide" data-slide="15">
-          <div class="slide-inner">
-            <div class="slide-copy">
-
-              <span class="slide-number">15 / 16</span>
-
-              <h1>Fiquei revoltado e pintei a cara</h1>
-
-              <p>Não temos contexto. Temos apenas a evidência.</p>
-
-              <div class="evidence">
-                EVIDÊNCIA Nº 15
-                <br>
-                <strong>Rosto: pintado.</strong>
-                <br>
-                <small>Motivo: desconhecido.</small>
-              </div>
-
-            </div>
-
-            <div class="image-wrap">
-              <img src="img/img14.jpeg" alt="Rosto pintado">
-            </div>
-          </div>
-        </article>
-
-        <!-- SLIDE 16 -->
-
-        <article class="memory-slide final-slide" data-slide="16">
-          <div class="slide-inner final-inner">
-
-            <div class="final-copy">
-
-              <span class="slide-number">16 / 16</span>
-
-              <p class="sun-intro">E depois de tudo isso...</p>
-
-              <h1>É isso.</h1>
-
-              <p class="final-subtext">
-                Obrigado por acompanhar esse acervo duvidoso de memórias.
-              </p>
-
-              <button class="restart-btn" id="restart-btn">
-                ↻ Voltar ao início
-              </button>
-
-            </div>
-
-            <div class="image-wrap final-image">
-              <img src="img/img16.jpeg" alt="Foto final">
-            </div>
-
-          </div>
-        </article>
-
-        <!-- FOOTER -->
-
-        <footer class="site-footer">
-          <span>Portfólio de Memórias • Trajetória Escolar</span>
-          <span id="slide-counter">1 / 16</span>
-        </footer>
-
-        <!-- NAVEGAÇÃO DOS SLIDES -->
-
-        <button id="prev-btn" class="nav-slide prev" aria-label="Slide anterior">
-          ←
-        </button>
-
-        <button id="next-btn" class="nav-slide next">
-          Prosseguir →
-        </button>
-
-      </div>
-
-    </section>
-
-
-    <!-- ========================= -->
-    <!-- REDAÇÕES -->
-    <!-- ========================= -->
-
-    <section id="redacoes" class="page-section">
-
-      <h1>Redações</h1>
-
-      <!-- REDAÇÕES ESPECIAIS -->
-
-      <div class="redacoes-grupo">
-
-        <h2>Redações Especiais</h2>
-
-        <div class="cards-grid">
-
-          <!-- REDAÇÃO 1 -->
-
-          <div class="card card-especial">
-
-            <button class="close-card-btn" aria-label="Fechar">
-              &times;
-            </button>
-
-            <div class="card-header">
-
-              <span class="tag">Primeira Avaliação de Redação</span>
-
-              <h3>
-                O respeito às diferenças como caminho para a superação dos conflitos sociais na sociedade contemporânea
-              </h3>
-
-            </div>
-
-            <div class="card-body">
-
-              <p>
-                Recentemente, em Santa Catarina, o governador aprovou um projeto, tal qual elimina as cotas raciais nas faculdades do estado. Essa decisão gerou um grande debate nas redes sociais, muitas pessoas concordaram e também muitas discordaram, criando um panorama diversificado de opiniões. Diante desse debate, é indispensável refletirmos sobre as cotas raciais e suas implicações. Por mais que tenham o propósito de promover a igualdade, podem acabar perpetuando estereótipos e negligenciando fatores socioeconômicos resultando em aplicações injustas.
-              </p>
-
-              <p>
-                Primeiramente, um dos principais problemas das cotas é o risco de perpetuar estereótipos, ao priorizar a etnia, podemos sugerir que determinados grupos precisam de um tratamento especial para alcançar o mesmo nível de desempenho. Tal percepção, mesmo não sendo a intenção, pode reforçar visões equivocadas sobre a competência e mérito individual. Dessa forma, em vez de promover a igualdade entre as etnias, pode acabar consolidando rótulos sociais que a própria política busca combater.
-              </p>
-
-              <p>
-                Além disso, cotas socioeconômicas mais diversas resolveriam a questão da equidade entre todos, desconsiderando fatores étnicos e culturais. Nesse caso, mais estudantes teriam o acesso ao ensino superior de forma justa, além de incentivar todos igualmente a concorrer às vagas, dando prioridade aos concorrentes de classe social mais baixa que poderiam ser negligenciados pelas cotas raciais. Essa forma também ajudaria a quebrar o ciclo de pobreza e enriquecendo o ambiente acadêmico como um todo.
-              </p>
-
-              <p>
-                Concluindo, embora as cotas raciais tenham sido criadas com o objetivo de promover maior igualdade no acesso ao ensino superior, sua aplicação pode gerar debates sobre critérios de justiça e efetividade. Nesse contexto, a adoção de cotas socioeconômicas surge como uma alternativa mais justa, pois considera as reais condições de vida dos estudantes e amplia as oportunidades para aqueles que enfrentam maiores dificuldades financeiras. Dessa forma, priorizar fatores socioeconômicos pode contribuir para reduzir desigualdades, favorecer o acesso à educação e promover uma sociedade mais justa, na qual as oportunidades sejam distribuídas conforme seu desempenho e mérito real.
-              </p>
-
-            </div>
-          </div>
-
-
-          <!-- REDAÇÃO 2 -->
-
-          <div class="card card-especial">
-
-            <button class="close-card-btn" aria-label="Fechar">
-              &times;
-            </button>
-
-            <div class="card-header">
-
-              <span class="tag">Concurso Agrinho</span>
-
-              <h3>
-                Agro forte, futuro sustentável: Equilíbrio entre produção e meio ambiente
-              </h3>
-
-            </div>
-
-            <div class="card-body">
-
-              <p>
-                Na contemporaneidade, o Agro é um dos pilares da economia brasileira, representando aproximadamente 25% do PIB segundo o levantamento CEPEA do ano de 2025. Entretanto, a dependência excessiva da exportação de produtos primários (commodities) causam diversas consequências, como a vulnerabilidade econômica e impactos na sustentabilidade ambiental, com os incentivos fiscais do governo.
-              </p>
-
-              <p>
-                Primeiramente, a economia muito atrelada a um setor específico tende a ser sensível a alterações de mercado, como no caso da Venezuela em 2014 quando o valor do petróleo despencou. No caso do Brasil, o Agro é fortemente atrelado a venda de commodities, além disso, também possuem incentivos a produção e exportação dos mesmos. Com esse incentivo e a dependência da venda desses produtos, uma possível queda de preços poderia deixar milhares de pessoas desempregadas e muitos pequenos produtores com altas dívidas.
-              </p>
-
-              <p>
-                Vale destacar também que o governo oferece vários benefícios fiscais para a venda de produtos primários e semielaborados, como a lei Kandir que isenta exportações de ICMS. Isso acaba afetando a sustentabilidade ambiental, incentivando a existência de grandes fazendas, junto disso aumentando a poluição com agrotóxicos. Ao invés disso, poderiam ser criadas leis para o incentivo da industrialização sustentável e plantações inteligentes.
-              </p>
-
-              <p>
-                Portanto, a dependência excessiva e os incentivos fiscais deverão ser analisados com finalidade de mitigar as consequências negativas. Com isso, o governo federal deverá adaptar algumas leis para incentivar o desenvolvimento de uma indústria sustentável e menores emissões de poluentes ao ambiente, através de projetos de lei. Desse modo, o Brasil se tornaria um país mais seguro economicamente e mais sustentável.
-              </p>
-
-            </div>
-          </div>
-
-
-          <!-- REDAÇÃO 3 -->
-
-          <div class="card card-especial">
-
-            <button class="close-card-btn" aria-label="Fechar">
-              &times;
-            </button>
-
-            <div class="card-header">
-
-              <span class="tag">Redação Temporizada • ENEM 2016</span>
-
-              <h3>
-                Caminhos para combater a intolerância religiosa no Brasil
-              </h3>
-
-            </div>
-
-            <div class="card-body">
-
-              <p>
-                Por volta do século I, a religião cristã foi considerada como algo pagão, cultuando falsos deuses segundo as crenças romanas. Na contemporaneidade, isso se torna visível quando pessoas atacam as outras por conta de religião. Nesse contexto, os preconceitos vindos de gerações passadas devem ser combatidos.
-              </p>
-
-              <p>
-                No século XV ocorreram os eventos de perseguição contra pessoas que discordam da teologia da época, como ocorreu com Galileu Galilei, o criador da teoria de que a terra girava ao redor do sol juntamente dos outros planetas. Esse pensamento de perseguição, por mais que reduzido, ainda acontece com pessoas mais extremas, discordando da tecnologia ou até mesmo atacando outras pessoas.
-              </p>
-
-              <p>
-                Além disso, as gerações mais jovens tendem a ser mais influenciáveis e extremas, podendo repetir o que aconteceu no passado se não houver uma boa educação.
-              </p>
-
-              <p>
-                Portanto, os preconceitos das gerações antigas deverão ser combatidos por meio da melhora da educação, focando em pontos como ética e tolerância, a fim de reduzir os impactos dos pensamentos dos antigos.
-              </p>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-
-      <!-- CIRCUITO DE TREINO PARA ENEM -->
-
-      <div class="redacoes-grupo">
-
-        <h2>Circuito de Treino para ENEM</h2>
-
-        <div class="cards-grid">
-
-          <div class="card">
-            <button class="close-card-btn">&times;</button>
-            <div class="card-header"><h3>Tema 1</h3></div>
-            <div class="card-body"><p>Conteúdo do Tema 1...</p></div>
-          </div>
-
-          <div class="card">
-            <button class="close-card-btn">&times;</button>
-            <div class="card-header"><h3>Tema 2</h3></div>
-            <div class="card-body"><p>Conteúdo do Tema 2...</p></div>
-          </div>
-
-          <div class="card">
-            <button class="close-card-btn">&times;</button>
-            <div class="card-header"><h3>Tema 3</h3></div>
-            <div class="card-body"><p>Conteúdo do Tema 3...</p></div>
-          </div>
-
-          <div class="card">
-            <button class="close-card-btn">&times;</button>
-            <div class="card-header"><h3>Tema 4</h3></div>
-            <div class="card-body"><p>Conteúdo do Tema 4...</p></div>
-          </div>
-
-          <div class="card">
-            <button class="close-card-btn">&times;</button>
-            <div class="card-header"><h3>Tema 5</h3></div>
-            <div class="card-body"><p>Conteúdo do Tema 5...</p></div>
-          </div>
-
-          <div class="card">
-            <button class="close-card-btn">&times;</button>
-            <div class="card-header"><h3>Tema 6</h3></div>
-            <div class="card-body"><p>Conteúdo do Tema 6...</p></div>
-          </div>
-
-          <div class="card">
-            <button class="close-card-btn">&times;</button>
-            <div class="card-header"><h3>Tema 7</h3></div>
-            <div class="card-body"><p>Conteúdo do Tema 7...</p></div>
-          </div>
-
-          <div class="card">
-            <button class="close-card-btn">&times;</button>
-            <div class="card-header"><h3>Tema 8</h3></div>
-            <div class="card-body"><p>Conteúdo do Tema 8...</p></div>
-          </div>
-
-          <div class="card">
-            <button class="close-card-btn">&times;</button>
-            <div class="card-header"><h3>Tema 9</h3></div>
-            <div class="card-body"><p>Conteúdo do Tema 9...</p></div>
-          </div>
-
-          <div class="card">
-            <button class="close-card-btn">&times;</button>
-            <div class="card-header"><h3>Tema 10</h3></div>
-            <div class="card-body"><p>Conteúdo do Tema 10...</p></div>
-          </div>
-
-          <div class="card">
-            <button class="close-card-btn">&times;</button>
-            <div class="card-header"><h3>Tema 11</h3></div>
-            <div class="card-body"><p>Conteúdo do Tema 11...</p></div>
-          </div>
-
-          <div class="card">
-            <button class="close-card-btn">&times;</button>
-            <div class="card-header"><h3>Tema 12</h3></div>
-            <div class="card-body"><p>Conteúdo do Tema 12...</p></div>
-          </div>
-
-          <div class="card">
-            <button class="close-card-btn">&times;</button>
-            <div class="card-header"><h3>Tema 13</h3></div>
-            <div class="card-body"><p>Conteúdo do Tema 13...</p></div>
-          </div>
-
-          <div class="card">
-            <button class="close-card-btn">&times;</button>
-            <div class="card-header"><h3>Tema 14</h3></div>
-            <div class="card-body"><p>Conteúdo do Tema 14...</p></div>
-          </div>
-
-        </div>
-      </div>
-
-    </section>
-
-  </main>
+    </main>
 
 </body>
 </html>
